@@ -1,0 +1,26 @@
+<h2 class="text-primary">StepInvest - Log In</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= bootstrap_flash %>
+
+  <div class="form-group mbs">
+    <%= f.email_field :email, placeholder: 'E-mail', autofocus: true, autocomplete: "email", class: 'form-control' %>
+  </div>
+
+  <div class="form-group mbn">
+    <%= f.password_field :password, placeholder: 'Senha', autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="form-group mbn">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, 'Manter Conectado', class: "text-primary pls" %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Entrar", class: 'btn btn-block btn-spaced btn-lg btn-secondary' %>
+  </div>
+  <%= render "devise/shared/links" %>
+<% end %>
