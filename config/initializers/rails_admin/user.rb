@@ -16,9 +16,6 @@ RailsAdmin.config do |config|
       end
       field :password
       field :password_confirmation
-      field :role, :enum do
-        enum %i[guest admin]
-      end
     end
   end
 end

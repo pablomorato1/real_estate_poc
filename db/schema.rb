@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_15_111314) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_17_124408) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_15_111314) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "price", default: 0.0
+    t.float "managed_equity", default: 100.0
   end
 
   create_table "property_prices", force: :cascade do |t|
@@ -43,16 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_15_111314) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["property_id"], name: "index_property_prices_on_property_id"
-  end
-
-  create_table "shares", force: :cascade do |t|
-    t.bigint "property_id", null: false
-    t.float "equity", default: 0.0
-    t.string "planned_yield", default: ""
-    t.float "price", default: 0.0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["property_id"], name: "index_shares_on_property_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -92,5 +83,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_15_111314) do
 
   add_foreign_key "investments", "users"
   add_foreign_key "property_prices", "properties"
-  add_foreign_key "shares", "properties"
 end
