@@ -17,4 +17,8 @@ module ApplicationHelper
     }
     html.html_safe
   end
+
+  def render_page_title(controller)
+    "#{t("controller_name.#{controller}")}"
+  end
 end

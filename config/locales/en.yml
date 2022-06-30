@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  controller_name:
+    dashboard: 'Dashboard'
+    promotions: 'Promotions'
