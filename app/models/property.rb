@@ -5,6 +5,11 @@ class Property < ApplicationRecord
 
   after_save :track_price
 
+  def square_meter_cost
+    return 0 if area.zero?
+    (price / area).round(2)
+  end
+
   private
 
   def track_price
