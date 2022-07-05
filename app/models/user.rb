@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum role: %i[guest admin]
+
+  has_many :investments, inverse_of: :user
+
+  validates :name, :email, :password, presence: :true
 end

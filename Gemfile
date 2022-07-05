@@ -7,6 +7,7 @@ ruby '3.0.0'
 
 gem 'rails', '~> 7.0.0'
 
+gem 'avo'
 gem 'carrierwave', '~> 2.0'
 gem 'devise'
 gem 'importmap-rails'
@@ -19,6 +20,7 @@ gem 'rails_admin', '~> 3.0'
 gem 'rails_admin_history_rollback'
 gem 'rails_admin_pundit', :github => 'sudosu/rails_admin_pundit'
 gem 'redis', '~> 4.0'
+gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails', '~> 1.0.0'
@@ -66,4 +68,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-gem 'sassc-rails'
