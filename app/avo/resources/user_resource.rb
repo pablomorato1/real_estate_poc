@@ -13,4 +13,6 @@ class UserResource < Avo::BaseResource
   field :password, as: :password, placeholder: ''
   field :password_confirmation, as: :password, placeholder: ''
   field :role, as: :select, enum: ::User.roles, display_with_value: true, placeholder: 'Select User Role'
+
+  filter UserRoleFilter
 end
