@@ -1,24 +1,35 @@
-# README
+# Stepinvest
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install dependencies
 
-Things you may want to cover:
+Ruby - Version specified on `.ruby-version` file
+Node - Version specified on `.nvmrc` file
+Redis - Must be running on port `6379`
 
-* Ruby version
+## Install gems / modules:
 
-* System dependencies
+```
+gem install bundler
+bundle install
+npm install
+```
 
-* Configuration
+## Setup
 
-* Database creation
+### Load frontend dependecies (must rerun everytime you change any file)
+```
+npm run build
+npm run build:css
+```
 
-* Database initialization
+### Create database
+```
+rake db:create
+rake db:schema:load
+```
 
-* How to run the test suite
+## Start development environment
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails s
+```

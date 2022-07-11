@@ -4,5 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum role: %i[guest admin]
+  enum role: %i[guest admin client]
+
+  has_many :investments, inverse_of: :user
+
+  validates :name, :email, :password, presence: :true
 end

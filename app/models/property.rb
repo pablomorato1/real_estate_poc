@@ -1,6 +1,8 @@
 class Property < ApplicationRecord
   has_paper_trail
 
+  has_one_attached :image
+
   has_many :property_prices, -> { order(created_at: :desc) }, dependent: :destroy
 
   after_save :track_price
