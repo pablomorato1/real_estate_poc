@@ -13,4 +13,5 @@ class PropertyResource < Avo::BaseResource
   field :image, as: :file
   field :price, as: :number
   field :managed_equity, as: :number
+  field :min_investment, as: :number, name: 'Minimum Investment'
 end
