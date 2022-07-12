@@ -11,6 +11,7 @@ Redis - Must be running on port `6379`
 ```
 gem install bundler
 bundle install
+
 npm install
 ```
 
