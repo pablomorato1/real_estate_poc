@@ -34,3 +34,4 @@ en:
   controller_name:
     dashboard: 'Dashboard'
     promotions: 'Promotions'
+    properties: 'Properties'

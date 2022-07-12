@@ -1,0 +1,39 @@
+<div class="flex-column m-2">
+  <div class="d-flex flex-row justify-content-between my-4">
+    <div class="w-25">
+      <h4><%= @property.name %></h4>
+      <p class="card-text mb-1">
+          <%= @property.address %>
+      </p>
+    </div>
+    <div class="w-25 d-flex justify-content-end align-items-start">
+      <%= link_to "Send Request", "#", method: :get, class: "btn btn-warning" %>
+    </div>
+  </div>
+  <div class="d-flex flex-row justify-content-between my-4">
+    <div>
+      <p class="card-text mb-1"><small class="text-muted">Minimum Investment</small></p>
+      <h3 class="text-primary">$<%= @property.min_investment %></h3>
+    </div>
+    <div class="border-end"></div>
+    <div>
+      <p class="card-text mb-1"><small class="text-muted">Equity</small></p>
+      <h3 class="text-primary"><%= @property.managed_equity %>%</h3>
+    </div>
+    <div class="border-end"></div>
+    <div>
+      <p class="card-text mb-1"><small class="text-muted">Projected Yield</small></p>
+      <h3 class="text-primary"><%= @property.yield_plan %></h3>
+    </div>
+    <div class="border-end"></div>
+    <div>
+      <p class="card-text mb-1"><small class="text-muted">Property Cost</small></p>
+      <h3 class="card-text">$<%= @property.price %></h3>
+    </div>
+    <div class="border-end"></div>
+    <div>
+      <p class="card-text mb-1"><small class="text-muted">Cost per square meter</small></p>
+      <h3 class="card-text">$<%= @property.square_meter_cost %></h3>
+    </div>
+  </div>
+</div>

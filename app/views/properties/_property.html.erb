@@ -4,7 +4,11 @@
     <div class="flex-column">
       <div class="d-flex flex-row justify-content-between border-bottom border-dark">
         <div class="w-25">
-          <p class="card-text mb-1"><small class="text-muted"><%= property.name %></small></p>
+          <p class="card-text mb-1">
+            <small class="text-muted">
+              <%= link_to property.name, property_path(property), method: :get, class: "text-muted", data: { turbo_frame: "_top" } %>
+            </small>
+          </p>
           <h5 class="card-title"><%= property.address %></h5>
         </div>
         <div class="w-25 d-flex justify-content-end align-items-start">
@@ -14,7 +18,7 @@
       <div class="d-flex flex-row justify-content-between">
         <div>
           <p class="card-text mb-1"><small class="text-muted">Minimum Investment</small></p>
-          <p class="card-text">$10000</p>
+          <p class="card-text">$<%= property.min_investment %></p>
         </div>
         <div>
           <p class="card-text mb-1"><small class="text-muted">Equity</small></p>

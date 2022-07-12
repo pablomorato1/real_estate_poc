@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_05_070936) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_11_184839) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_05_070936) do
     t.datetime "updated_at", null: false
     t.float "price", default: 0.0
     t.float "managed_equity", default: 100.0
+    t.float "min_investment", default: 0.0
   end
 
   create_table "property_prices", force: :cascade do |t|
