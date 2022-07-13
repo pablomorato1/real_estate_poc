@@ -2,8 +2,8 @@
 
 ## Install dependencies
 
-Ruby - Version specified on `.ruby-version` file
-Node - Version specified on `.nvmrc` file
+Ruby - Version specified on `.ruby-version` file\
+Node - Version specified on `.nvmrc` file\
 Redis - Must be running on port `6379`
 
 ## Install gems / modules:
