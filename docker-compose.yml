@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  postgres:
+    container_name: postgres-step-invest-hotwires
+    restart: always
+    image: postgres:latest
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+#      - POSTGRES_PASSWORD=postgrespw
+      - POSTGRES_DB=stepinvest_development
+    volumes:
+      - database-data:/var/lib/postgresql/data/ # persist data even if container shuts down
+    ports:
+      - '5432:5432'
+  redis:
+    image: redis:latest
+    volumes:
+      - redis-data:/data
+    ports:
+      - '6379:6379'
+
+volumes:
+  # named volumes can be managed easier using docker-compose
+  database-data:
+  redis-data:
