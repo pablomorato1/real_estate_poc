@@ -1,1 +1,21 @@
-<div class="dashboardHeader dashboardHeader__dashboard">Dashboard <%= mock_data[:freeValue] %></div>
+<div class="dashboardHeader dashboardHeader__dashboard">
+  <div>
+    <p class="siText siText__label siText__colorMidGrey">Investment amount</p>
+    <p class="mt-1 siText siText__header siText__colorPrimary"><%= mock_data[:investedValue] %></p>
+  </div>
+  <div class="delimiter delimiter__horizontal"></div>
+  <div>
+    <p class="siText siText__label siText__colorMidGrey">Wallet</p>
+    <p class="mt-1 siText siText__header siText__colorPrimary"><%= mock_data[:freeValue] %></p>
+  </div>
+  <div class="delimiter delimiter__horizontal"></div>
+  <div>
+    <p class="siText siText__label siText__colorMidGrey">Assessed value</p>
+    <p class="mt-1 siText siText__header siText__colorPrimary"><%= mock_data[:assessedValue] %></p>
+  </div>
+  <div class="delimiter delimiter__horizontal"></div>
+  <div>
+    <p class="siText siText__label siText__colorMidGrey">Passive income</p>
+    <p class="mt-1 siText siText__header siText__colorPrimary"><%= mock_data[:income] %></p>
+  </div>
+</div>
