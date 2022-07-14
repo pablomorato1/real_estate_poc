@@ -12,6 +12,7 @@
     "sass": "^1.52.1"
   },
   "scripts": {
+    "dev:css": "npm run build:css -- --watch",
     "build": "node scripts/build.mjs",
     "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=./node_modules"
   }
