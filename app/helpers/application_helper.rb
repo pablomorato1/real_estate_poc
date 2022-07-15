@@ -25,4 +25,10 @@ module ApplicationHelper
   def render_page_title(controller)
     "#{t("controller_name.#{controller}")}"
   end
+
+  def show_svg(path)
+    File.open("app/assets/images/#{path}", "rb") do |file|
+      raw file.read
+    end
+  end
 end
