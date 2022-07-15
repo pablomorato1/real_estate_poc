@@ -1,5 +1,50 @@
 .siNavbar {
-  display: flex;
-  flex-direction: column;
-  background-color: rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    width: 196px;
+    border-right: #ECECED 1px solid;
+
+    &_menu {
+        flex: 1;
+        padding-left: 16px;
+        padding-top: 41px;
+        padding-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &_link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 12px;
+        text-decoration: none;
+
+        &_icon {
+            margin-left: 12px;
+        }
+
+        &__selected {
+            color: #E08043;
+            pointer-events: none;
+        }
+
+        &:last-child {
+            margin-top: auto;
+        }
+    }
+
+    &_footer {
+        padding: 24px 80px 24px 58px;
+        border-top: #E5E4E7 1px solid;
+
+        &_item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
 }
