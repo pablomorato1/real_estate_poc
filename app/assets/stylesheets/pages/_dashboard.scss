@@ -1,0 +1,15 @@
+.dashboard {
+  &Header {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 32px;
+
+    &__dashboard {
+      justify-content: space-between;
+    }
+
+    &__promotions {
+    }
+  }
+}
