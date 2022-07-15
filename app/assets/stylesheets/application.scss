@@ -51,7 +51,14 @@ body {
 
 .pageContent {
     flex: 1;
-    background-color: red;
+    display: flex;
+    flex-direction: row;
+}
+
+.siNavbar {
+    display: flex;
+    flex-direction: column;
+    background-color: rebeccapurple;
 }
 
 .dashboard {

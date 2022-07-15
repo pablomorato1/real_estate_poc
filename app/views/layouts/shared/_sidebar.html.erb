@@ -1,11 +1,14 @@
 <div class="pageLayout">
   <div class="pageHeader">
-    <a href="/" class="pageHeader_logo" >
-        <%= image_tag "logo.png" %>
+    <a href="/" class="pageHeader_logo">
+      <%= image_tag "logo.png" %>
     </a>
     <div class="pageHeader_content">
       <%= render render_header %>
     </div>
   </div>
-  <div class="pageContent">Content</div>
+  <div class="pageContent">
+    <%= render 'layouts/shared/navbar' %>
+    <div>Content</div>
+  </div>
 </div>
