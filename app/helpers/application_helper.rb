@@ -19,11 +19,11 @@ module ApplicationHelper
   end
 
   def render_header
-    nil
+    "#{controller_name}/header"
   end
 
-  def render_page_title(controller)
-    "#{t("controller_name.#{controller}")}"
+  def render_content
+    "#{controller_name}/content"
   end
 
   def show_svg(path)
