@@ -13,10 +13,9 @@
   },
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:docker": "docker compose up -d",
     "dev:css": "npm run build:css -- --watch",
-    "dev:js": "npm run build -- --watch",
-    "build": "node scripts/build.mjs",
+    "dev:js": "npm run build -- --watch --sourcemap",
+    "build": "esbuild app/javascript/application.js --bundle --outdir=app/assets/builds --public-path=assets",
     "build:css": "sass ./app/assets/stylesheets/application.scss ./app/assets/builds/application.css --no-source-map --load-path=./node_modules"
   },
   "devDependencies": {
