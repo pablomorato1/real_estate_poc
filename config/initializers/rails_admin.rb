@@ -39,5 +39,5 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.excluded_models= [PropertyPrice]
+  # config.excluded_models= [PropertyPrice]
 end
