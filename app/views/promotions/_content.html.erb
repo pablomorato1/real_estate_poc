@@ -1,3 +1,8 @@
-<div class="">
-Promotions
+<%= turbo_stream_from :promotions %>
+
+<div class="card-group">
+  <%= turbo_frame_tag :promotions, class: "w-100" do %>
+    <%= render partial: 'promotions/property_card', collection: @promotions %>
+  <% end %>
 </div>
+
