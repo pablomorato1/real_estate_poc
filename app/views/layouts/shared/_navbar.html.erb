@@ -1,6 +1,6 @@
 <div class="siNavbar">
-  <div class="siNavbar_menu">
-    <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/">
+  <div class="siNavbar_menu" data-controller="link">
+    <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/" data-links-target="link" data-action="mouseenter->link#onRollOver mouseout->link#onRollOut">
       <span class="non-hover">
         <%= show_svg('icon-dashboard.svg') %>
       </span>
@@ -9,6 +9,9 @@
       </span>
       Dashboard
     </a>
+
+    <%#= link_to 'LINK', "/promotions", class: "siText siNavbar_link siText__regular siText__colorPrimary", data: { action: "link->home#onClick" } %>
+
     <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/promotions">
       <span class="non-hover">
         <%= show_svg('icon-promotions.svg') %>
@@ -18,6 +21,7 @@
       </span>
       Promotions
     </a>
+
     <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/portfolio">
       <span class="non-hover">
         <%= show_svg('icon-portfolio.svg') %>

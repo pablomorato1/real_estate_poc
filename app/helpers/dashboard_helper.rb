@@ -99,7 +99,8 @@ module DashboardHelper
           ],
           "effort": "PASSIVE"
         }
-      ], transactions: [
+      ],
+      transactions: [
       {
         "id": "cl5qh8xp50954a4rsmf2zq9g0",
         "createdAt": "2022-07-18T08:20:48.665Z",
@@ -143,8 +144,8 @@ module DashboardHelper
         "value": 653,
         "name": "Payout for \"Dare, Wunsch and Mosciski\"",
         "description": "communal payments",
-        "annual": null,
-        "report": null,
+        "annual": nil,
+        "report": nil,
         "assetId": "cl5qh8dzp0710a4rs9iq90yiv",
         "walletId": "cl5qh7nfb0052a4rswtc4usrz"
       },
