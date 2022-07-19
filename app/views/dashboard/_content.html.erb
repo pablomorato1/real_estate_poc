@@ -5,13 +5,13 @@
   <div class="dashboardContent_transactionList">
     <p class="siText siText__subtitle siText__colorPrimary">Accrual history</p>
     <%= turbo_frame_tag :transitions, class: "transitions_list" do %>
-      <%= render @transactions %>
+      <%= render partial: 'dashboard/transactions', collection: @transactions %>
     <% end %>
   </div>
   <div class="dashboardContent_promotionsList">
     <p class="siText siText__subtitle siText__colorPrimary">Promotions</p>
     <%= turbo_frame_tag :promotions, class: "promotions_list" do %>
-      <%= render @promotions %>
+      <%= render partial: 'dashboard/promotions', collection: @promotions %>
     <% end %>
   </div>
 </div>
