@@ -2,9 +2,6 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def show
-  end
-
-  def index
     @promotions = [
       {
         "id": "cl5qh7x2n0163a4rskvqthpu3",
