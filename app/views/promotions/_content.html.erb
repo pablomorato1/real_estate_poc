@@ -18,7 +18,7 @@
   </ul>
   <div class="tab-content">
     <div role="tabpanel" id="react-aria-1-tabpane-Property" aria-labelledby="react-aria-1-tab-Property" class="fade tab-pane active show">
-      <%= turbo_frame_tag :properties, class: "promotionsList" do %>
+      <%= turbo_frame_tag :properties, class: "promotionsList", "data-controller": "property-card" do %>
         <%= render partial: 'promotions/property_card', collection: @properties %>
       <% end %>
     </div>

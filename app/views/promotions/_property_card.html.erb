@@ -1,4 +1,9 @@
-<div class="promotions_card" data-id="<%= property_card[:id] %>">
+<div
+  class="promotions_card"
+  data-property-card-target="card"
+  data-property-card-id-param="<%= property_card[:id] %>"
+  data-action="click->property-card#navigateToDetails"
+>
   <img class="promotions_card_image" src="<%= property_card[:thumbnail] %>" width="140" height="140" alt="preview">
   <div class="p-3 flex-fill">
     <div class="promotions_card_header">
@@ -9,7 +14,15 @@
           <span class="Badge_base ms-2">active</span>
         </div>
       </div>
-      <button type="button" data-id="<%= property_card[:id] %>" class="btn btn-secondary btn-lg">Send Request</button>
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg"
+        data-property-card-id-param="<%= property_card[:id] %>"
+        data-property-card-target="request"
+        data-action="click->property-card#sendBuyRequest:stop"
+      >
+        Send Request
+      </button>
     </div>
     <div class="promotions_card_footer">
       <div>

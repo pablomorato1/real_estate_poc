@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import LinkController from "./link_controller.js"
 application.register("link", LinkController)
+
+import PropertyCardController from "./property_card_controller.js"
+application.register("property-card", PropertyCardController)
