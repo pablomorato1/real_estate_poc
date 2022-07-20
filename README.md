@@ -27,8 +27,14 @@ npm run build:css
 
 ### Create database
 ```
-rake db:create
-rake db:schema:load
+rails db:create
+rails db:schema:load
+
+```
+
+### Seed database with info
+```
+rails db:seed
 ```
 
 ## Start development environment
