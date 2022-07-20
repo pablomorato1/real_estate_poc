@@ -13,6 +13,8 @@ export default class extends Controller {
     
     sendBuyRequest({params: {url}}) {
         // TODO: send request here
-        console.log(`>> click request`, id);
+        console.log(`>> click request`, url);
+        
+        window.alert(`plz open link ${url}`)
     }
 }
