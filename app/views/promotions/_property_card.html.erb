@@ -1,7 +1,7 @@
 <div
   class="promotions_card"
   data-property-card-target="card"
-  data-property-card-id-param="<%= property_card[:id] %>"
+  data-property-card-url-param="/properties/<%= property_card[:id] %>/overview"
   data-action="click->property-card#navigateToDetails"
 >
   <img class="promotions_card_image" src="<%= property_card[:thumbnail] %>" width="140" height="140" alt="preview">
@@ -17,7 +17,7 @@
       <button
         type="button"
         class="btn btn-secondary btn-lg"
-        data-property-card-id-param="<%= property_card[:id] %>"
+        data-property-card-url-param="<%= property_card[:id] %>"
         data-property-card-target="request"
         data-action="click->property-card#sendBuyRequest:stop"
       >

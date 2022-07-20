@@ -7,11 +7,11 @@ export default class extends Controller {
     connect() {
     }
     
-    navigateToDetails({params: {id}}) {
-        window.location = `/properties/${id}/overview`;
+    navigateToDetails({params: {url}}) {
+        window.location = url;
     }
     
-    sendBuyRequest({params: {id}}) {
+    sendBuyRequest({params: {url}}) {
         // TODO: send request here
         console.log(`>> click request`, id);
     }
