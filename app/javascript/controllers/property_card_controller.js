@@ -5,15 +5,14 @@ export default class extends Controller {
     static targets = ["card", "request"];
     
     connect() {
-        // console.log(`>> hello`, this.element.innerHTML);
     }
     
     navigateToDetails({params: {id}}) {
-        console.log(`>> click card`, id);
+        window.location = `/properties/${id}/overview`;
     }
     
     sendBuyRequest({params: {id}}) {
+        // TODO: send request here
         console.log(`>> click request`, id);
-        
     }
 }
