@@ -1,1 +1,37 @@
-<h1><%= property_card.name %></h1>
+<div class="promotions_card" data-id="<%= property_card[:id] %>">
+  <img class="promotions_card_image" src="<%= property_card[:thumbnail] %>" width="140" height="140" alt="preview">
+  <div class="p-3 flex-fill">
+    <div class="promotions_card_header">
+      <div>
+        <p class="siText mb-2 siText__label siText__colorPrimary"><%= property_card[:name] %></p>
+        <div class="d-flex mb-3 align-items-center">
+          <span class="siText siText__regular siText__colorPrimary"><%= property_card[:name2] %></span>
+          <span class="Badge_base ms-2">active</span>
+        </div>
+      </div>
+      <button type="button" data-id="<%= property_card[:id] %>" class="btn btn-secondary btn-lg">Send Request</button>
+    </div>
+    <div class="promotions_card_footer">
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Minimum investment</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorSecondary"><%= property_card[:minInvest] %></p>
+      </div>
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Equity</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorSecondary"><%= property_card[:equity] %></p>
+      </div>
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Projected yield</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorSecondary"><%= property_card[:projectedYield] %></p>
+      </div>
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Property cost</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorPrimary"><%= property_card[:costTotal] %></p>
+      </div>
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Cost per square meter</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorPrimary"><%= property_card[:costPerMeter] %></p>
+      </div>
+    </div>
+  </div>
+</div>

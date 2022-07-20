@@ -160,8 +160,4 @@ class DashboardController < ApplicationController
       }
     ]
   end
-
-  def turbo_frame_test
-    '111'
-  end
 end

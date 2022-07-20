@@ -1,8 +1,38 @@
-<%= turbo_stream_from :promotions %>
+<%= turbo_stream_from :properties %>
 
-<div class="card-group">
-  <%= turbo_frame_tag :promotions, class: "w-100" do %>
-    <%= render partial: 'promotions/property_card', collection: @properties %>
-  <% end %>
+<div class="promotionsContent">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button
+        type="button"
+        id="react-aria-1-tab-Property"
+        role="tab"
+        data-rr-ui-event-key="Property"
+        aria-controls="react-aria-1-tabpane-Property"
+        aria-selected="true"
+        class="siTab nav-link active"
+      >
+        Property
+      </button>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div role="tabpanel" id="react-aria-1-tabpane-Property" aria-labelledby="react-aria-1-tab-Property" class="fade tab-pane active show">
+      <%= turbo_frame_tag :properties, class: "promotionsList" do %>
+        <%= render partial: 'promotions/property_card', collection: @properties %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="dropdown promotionsSortControl">
+    <button type="button" id="react-aria-2" aria-expanded="false" class="no-box-shadow dropdown-toggle btn btn-text">
+      <span class="siText siText__regular siText__colorPrimary">Sort by minimum investments: none</span>
+    </button>
+    <!--    <div x-placement="bottom-end" aria-labelledby="react-aria-2" class="dropdown-menu show dropdown-menu-end" data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; transform: translate3d(0px, 40px, 0px);">-->
+    <!--      <a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">high to low</a>-->
+    <!--      <a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">low to high</a>-->
+    <!--      <a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">none</a>-->
+    <!--    </div>-->
+  </div>
 </div>
 

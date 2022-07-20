@@ -1,11 +1,92 @@
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+$primary: #ACACAD;
+$secondary: #E08043;
+$danger: #CF2F4C;
+
+:root {
+    --sidemenu-width: 196px;
+}
+
+.siTab {
+    border: none !important;
+    border-bottom: 3px solid #E5E4E7 !important;
+    margin-right: 20px;
+    background: none !important;
+    transition: border-bottom-color 0.5s, color 0.5s;
+
+    &[aria-selected=true] {
+        border-bottom-color: #E08043 !important;
+    }
+}
+
+.mimic-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.modal-header, .nav-tabs {
+    border-bottom: none !important;
+}
+
+.modal-content {
+    border-radius: 10px !important;
+}
+
+.no-box-shadow {
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+.btn {
+    border-radius: 10px !important;
+}
+
+.form-control {
+    background-color: transparent !important;
+}
+
+.btn-secondary {
+    color: #FFFFFF !important;
+}
+
+.btn-outline-secondary {
+    transition: color 0.5s, border-bottom-color 0.5s, border-left-color 0.5s, border-right-color 0.5s, border-top-color 0.5s, background-color 0.5s;
+
+    &:hover {
+        color: #FFFFFF !important;
+        border-color: $secondary !important;
+    }
+}
+
+.btn-primary {
+    color: #FFFFFF !important;
+}
+
+.btn-outline-primary {
+    color: #272727 !important;
+    border-color: #E5E4E7 !important;
+    transition: border-bottom-color 0.5s, color 0.5s;
+
+    &:hover {
+        border-color: #272727 !important;
+        background-color: transparent !important;
+    }
+}
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 0.5rem 2.5rem !important;
+    font-size: 1rem !important;
+    border-radius: 0.6rem !important;
 }

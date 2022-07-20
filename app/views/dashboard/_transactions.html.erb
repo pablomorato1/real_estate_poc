@@ -1,5 +1,5 @@
 <div class="transitions_entity">
-  <p class="transitions_date siText siText__label siText__colorMidGrey"><%= transactions[:created_at] %></p>
+  <p class="transitions_date siText siText__label siText__colorMidGrey"><%= transactions[:createdAt].to_date.strftime("%d.%m.%Y") %></p>
   <div class="transitions_names">
     <p class="siText siText__regular siText__colorPrimary"><%= transactions[:name] %></p>
     <p class="siText siText__label siText__colorGrey"><%= transactions[:description] %></p>
