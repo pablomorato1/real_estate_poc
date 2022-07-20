@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: b98d32dcca8aa482525320d8463dff741af0d84d
+  branch: master
+  specs:
+    faker (2.21.0)
+      i18n (>= 1.8.11, < 2)
+
+GIT
   remote: https://github.com/sudosu/rails_admin_pundit.git
   revision: 5fde2da4120bde58b5edf4e0a3351d392ddee85c
   specs:
@@ -400,6 +408,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   debug
   devise
+  faker!
   importmap-rails
   jbuilder
   paper_trail (~> 12.3)
