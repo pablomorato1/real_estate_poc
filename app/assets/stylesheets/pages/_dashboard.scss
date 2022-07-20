@@ -15,14 +15,14 @@
         gap: 32px;
         overflow-y: hidden;
 
-        &_transactionList {
+        &_transaction {
             flex: 1 1;
             display: flex;
             flex-direction: column;
             overflow: hidden;
         }
 
-        &_promotionsList {
+        &_promotions {
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -105,5 +105,40 @@
         gap: 10px;
         width: 415px;
         min-width: 415px;
+    }
+
+    &_entity {
+        position: relative;
+        width: 378px;
+        background: #272727;
+        border: 1px solid #272727;
+        border-radius: 4px;
+        user-select: none;
+    }
+
+    &_image {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    &_texts {
+        position: absolute;
+        bottom: 21px;
+        left: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &_link {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+
+        &:hover {
+            color: #E08043;
+        }
     }
 }

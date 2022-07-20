@@ -1,5 +1,5 @@
 <div class="transitions_entity">
-  <p class="transitions_date siText siText__label siText__colorMidGrey"><%= transactions[:createdAt] %></p>
+  <p class="transitions_date siText siText__label siText__colorMidGrey"><%= transactions[:created_at] %></p>
   <div class="transitions_names">
     <p class="siText siText__regular siText__colorPrimary"><%= transactions[:name] %></p>
     <p class="siText siText__label siText__colorGrey"><%= transactions[:description] %></p>
@@ -11,7 +11,7 @@
       <p class="siText siText__label siText__colorGrey">annual</p>
     </div>
   </div>
-  <a class="transitions_downloadBadge" href="https://si-test-app.herokuapp.com//_next/image?url=%2Fimages%2Fpersonal-manager-avatar.png&amp;w=48&amp;q=100" download="Report">
+  <a class="transitions_downloadBadge" href="<%= transactions[:report] %>" download="Report">
     <span class="siText siText__label siText__colorPrimary">Report</span>
     <%= show_svg('icon-download.svg') %>
   </a>

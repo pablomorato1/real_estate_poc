@@ -2,13 +2,13 @@
 <%= turbo_stream_from :promotions %>
 
 <div class="dashboardContent">
-  <div class="dashboardContent_transactionList">
+  <div class="dashboardContent_transaction">
     <p class="siText siText__subtitle siText__colorPrimary">Accrual history</p>
     <%= turbo_frame_tag :transitions, class: "transitions_list" do %>
       <%= render partial: 'dashboard/transactions', collection: @transactions %>
     <% end %>
   </div>
-  <div class="dashboardContent_promotionsList">
+  <div class="dashboardContent_promotions">
     <p class="siText siText__subtitle siText__colorPrimary">Promotions</p>
     <%= turbo_frame_tag :promotions, class: "promotions_list" do %>
       <%= render partial: 'dashboard/promotions', collection: @promotions %>
