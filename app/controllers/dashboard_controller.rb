@@ -2,6 +2,7 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def show
+    # @promotions = Property.only_displayed_on_dashboard
     @promotions = [
       {
         "id": "cl5qh7x2n0163a4rskvqthpu3",

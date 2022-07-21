@@ -7,6 +7,8 @@ class Property < ApplicationRecord
 
   has_many :property_prices, -> { order(created_at: :desc) }, dependent: :destroy
 
+  scope :only_displayed_on_dashboard, -> { where(show_on_dashboard: true) }
+
   after_save :track_price
 
   def square_meter_cost
