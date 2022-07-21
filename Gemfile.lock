@@ -144,6 +144,10 @@ GEM
     diff-lcs (1.5.0)
     digest (3.1.0)
     docile (1.4.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     dry-initializer (3.1.1)
     erubi (1.10.0)
     ffi (1.15.5)
@@ -400,6 +404,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   debug
   devise
+  dotenv-rails
   importmap-rails
   jbuilder
   paper_trail (~> 12.3)
