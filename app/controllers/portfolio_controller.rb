@@ -11,7 +11,7 @@ class PortfolioController < ApplicationController
             equity: 21.81174475891349,
             income: 0,
             projectedYield: 14,
-            effort: 'PASSIVE',
+            effort: 'passive',
             createdAt: '2022-07-18T08:20:29.646Z',
             soldAt: nil,
             userId: 1,
@@ -24,7 +24,7 @@ class PortfolioController < ApplicationController
             equity: 31.04412995977047,
             income: 0,
             projectedYield: 15,
-            effort: 'PASSIVE',
+            effort: 'passive',
             createdAt: '2022-07-18T08:20:40.064Z',
             soldAt: nil,
             userId: 1,
@@ -37,7 +37,7 @@ class PortfolioController < ApplicationController
             equity: 42.9374677002584,
             income: 1255,
             projectedYield: 14,
-            effort: 'PASSIVE',
+            effort: 'passive',
             createdAt: '2022-07-18T08:20:34.788Z',
             soldAt: nil,
             userId: 1,
@@ -53,11 +53,11 @@ class PortfolioController < ApplicationController
         "equity": 35.83148110729441,
         "income": 1377,
         "projectedYield": 11,
-        "effort": "ACTIVE",
+        "effort": "active",
         "createdAt": "2022-07-18T08:20:23.125Z",
         "soldAt": "2022-07-18T08:21:18.392Z",
-        "userId": "cl5qh7nfb0051a4rswciird7y",
-        "propertyId": "cl5qh7xvi0186a4rs5xwcpd3t"
+        "userId": 1,
+        "propertyId": 5
       }
     ]
   end

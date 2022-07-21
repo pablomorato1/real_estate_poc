@@ -1,5 +1,6 @@
 <%= turbo_stream_from :active_assets %>
 <%= turbo_stream_from :achieved_assets %>
+<%= turbo_stream_from :properties %>
 
 <div class="portfolioContent">
   <ul class="nav nav-tabs" id="portfolioTabs" role="tablist">
@@ -35,12 +36,12 @@
   <div class="tab-content" id="portfolioTabsContent">
     <div role="tabpanel" id="active-assets-tab-pane" aria-labelledby="active-assets-tab" class="fade tab-pane active show" tabindex="0">
       <%= turbo_frame_tag :active_assets, class: "portfolioList", "data-controller": "asset-card" do %>
-        <%= render partial: 'portfolio/asset_card', collection: @active_assets %>
+        <%= render partial: 'portfolio/asset_card', collection: @active_assets, properties: @properties %>
       <% end %>
     </div>
     <div role="tabpanel" id="achieved-assets-tab-pane" aria-labelledby="achieved-assets-tab" class="fade tab-pane" tabindex="0">
       <%= turbo_frame_tag :active_assets, class: "portfolioList", "data-controller": "asset-card" do %>
-        <%= render partial: 'portfolio/asset_card', collection: @achieved_assets %>
+        <%= render partial: 'portfolio/asset_card', collection: @achieved_assets, properties: @properties %>
       <% end %>
     </div>
   </div>

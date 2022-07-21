@@ -8,11 +8,9 @@
   <div class="p-3 flex-fill">
     <div class="portfolio_card_header">
       <div>
-        <p class="siText mb-2 siText__label siText__colorPrimary">Pacocha, Bruen and Kshlerin</p>
-<!--        <p class="siText mb-2 siText__label siText__colorPrimary"><%#= asset_card[:name] %></p>-->
+        <p class="siText mb-2 siText__label siText__colorPrimary"><%= @properties[0].name %></p>
         <div class="d-flex mb-3 align-items-center">
-          <span class="siText siText__regular siText__colorPrimary">423 Ferry Viaduct Apt. 121</span>
-<!--          <span class="siText siText__regular siText__colorPrimary"><%#= asset_card[:name2] %></span>-->
+          <span class="siText siText__regular siText__colorPrimary"><%= @properties[0].address %></span>
           <span class="siBadge ms-2"><%= (asset_card[:effort] == 'PASSIVE') ? 'passive' : 'active' %></span>
         </div>
       </div>
@@ -41,7 +39,7 @@
       </div>
       <div>
         <p class="siText siText__label siText__colorPrimary">Property cost</p>
-        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary">TODO: implement</p>
+        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary"><%= @properties[0].price %></p>
       </div>
       <div>
         <p class="siText siText__label siText__colorPrimary">Total income</p>

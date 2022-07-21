@@ -1,18 +1,17 @@
 <div class="siNavbar">
   <div class="siNavbar_menu" data-controller="link">
-    <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/" data-links-target="link" data-action="mouseenter->link#onRollOver mouseout->link#onRollOut">
-      <span class="non-hover">
-        <%= show_svg('icon-dashboard.svg') %>
-      </span>
-      <span class="only-hover">
-        <%= show_svg('icon-dashboard-hover.svg') %>
-      </span>
+    <a
+      class="siText siNavbar_link siText__regular siText__colorPrimary"
+      href="/"
+      data-link-target="item"
+      data-icon="<%= url_for('app/assets/images/icon-dashboard.svg') %>"
+      data-icon-hover="icon-dashboard-hover.svg"
+    >
+      <img src="<%= url_for('app/assets/images/icon-dashboard.svg') %>" alt="dashboard" width="30" height="26">
       Dashboard
     </a>
 
-    <%#= link_to 'LINK', "/promotions", class: "siText siNavbar_link siText__regular siText__colorPrimary", data: { action: "link->home#onClick" } %>
-
-    <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/promotions">
+    <a class="siText siNavbar_link siText__regular siText__colorPrimary" data-link-target="item" href="/promotions">
       <span class="non-hover">
         <%= show_svg('icon-promotions.svg') %>
       </span>
@@ -22,7 +21,7 @@
       Promotions
     </a>
 
-    <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/portfolio">
+    <a class="siText siNavbar_link siText__regular siText__colorPrimary" data-link-target="item" href="/portfolio">
       <span class="non-hover">
         <%= show_svg('icon-portfolio.svg') %>
       </span>
@@ -31,7 +30,7 @@
       </span>
       Portfolio
     </a>
-    <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/wallet">
+    <a class="siText siNavbar_link siText__regular siText__colorPrimary" data-link-target="item" href="/wallet">
       <span class="non-hover">
         <%= show_svg('icon-wallet.svg') %>
       </span>
@@ -40,7 +39,7 @@
       </span>
       Wallet
     </a>
-    <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/profile">
+    <a class="siText siNavbar_link siText__regular siText__colorPrimary" data-link-target="item" href="/profile">
       <span class="non-hover">
         <%= show_svg('icon-profile.svg') %>
       </span>
@@ -50,7 +49,7 @@
       My
       profile
     </a>
-    <a class="siText siNavbar_link siText__regular siText__colorPrimary" href="/help">
+    <a class="siText siNavbar_link siText__regular siText__colorPrimary" data-link-target="item" href="/help">
       <span class="non-hover">
         <%= show_svg('icon-help.svg') %>
       </span>
