@@ -35,6 +35,28 @@
         &:last-child {
             margin-top: auto;
         }
+
+        & > .icon-regular {
+            transition: opacity 0.5s;
+        }
+
+        &:hover > .icon-regular, &__selected > .icon-regular {
+            opacity: 0;
+        }
+
+        & > .icon-hover {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s;
+
+            &[alt=exit] {
+                right: -23px;
+            }
+        }
+
+        &:hover > .icon-hover, &__selected > .icon-hover {
+            opacity: 1;
+        }
     }
 
     &_footer {

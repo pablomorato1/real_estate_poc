@@ -8,9 +8,6 @@ export default class extends Controller {
         this.itemTargets.map((item) => {
             if (item.attributes.href.value === window.location.pathname) {
                 item.classList.add('siNavbar_link__selected')
-                // item.querySelector('img').setAttribute('src', '/images/icon-dashboard-hover.svg')
-            } else {
-                // item.querySelector('img').setAttribute('src', '/images/icon-dashboard.svg')
             }
         })
     }
