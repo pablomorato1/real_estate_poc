@@ -1,3 +1,59 @@
-<div class="">
-Portfolio
+<%= turbo_stream_from :active_assets %>
+<%= turbo_stream_from :achieved_assets %>
+
+<div class="portfolioContent">
+  <ul class="nav nav-tabs" id="portfolioTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link active"
+        type="button"
+        id="active-assets-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#active-assets-tab-pane"
+        aria-controls="active-assets-tab-pane"
+        aria-selected="true"
+      >
+        Active
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link"
+        type="button"
+        id="achieved-assets-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#achieved-assets-tab-pane"
+        aria-controls="achieved-assets-tab-pane"
+      >
+        Achieve
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="portfolioTabsContent">
+    <div role="tabpanel" id="active-assets-tab-pane" aria-labelledby="active-assets-tab" class="fade tab-pane active show" tabindex="0">
+      <%= turbo_frame_tag :active_assets, class: "portfolioList", "data-controller": "asset-card" do %>
+        <%= render partial: 'portfolio/asset_card', collection: @active_assets %>
+      <% end %>
+    </div>
+    <div role="tabpanel" id="achieved-assets-tab-pane" aria-labelledby="achieved-assets-tab" class="fade tab-pane" tabindex="0">
+      <%= turbo_frame_tag :active_assets, class: "portfolioList", "data-controller": "asset-card" do %>
+        <%= render partial: 'portfolio/asset_card', collection: @achieved_assets %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="dropdown portfolioSortControl">
+    <button class="no-box-shadow dropdown-toggle btn btn-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="siText siText__regular siText__colorPrimary">Sort by equity: none</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">high to low</a></li>
+      <li><a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">low to high</a></li>
+      <li><a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">none</a></li>
+    </ul>
+  </div>
+
 </div>

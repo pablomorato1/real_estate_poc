@@ -1,0 +1,71 @@
+.portfolio {
+    &Header {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 32px;
+        justify-content: space-between;
+    }
+
+    &Content {
+        position: relative;
+        flex: 1 1;
+        padding: 22px 0 0 30px;
+        display: flex;
+        flex-direction: column;
+
+        & > .tab-content {
+            overflow-y: auto;
+            padding: 0 30px 0 0;
+        }
+    }
+
+    &SortControl {
+        position: absolute !important;
+        top: 24px;
+        right: 45px;
+    }
+
+    &List {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 0;
+    }
+
+    &_card {
+        display: flex;
+        flex-direction: row;
+        background: #fff;
+        box-shadow: 0 2px 12px rgb(39 39 39 / 10%), 0 2px 14px rgb(39 39 39 / 8%);
+        border-radius: 5px;
+        height: 140px;
+        overflow: hidden;
+        cursor: pointer;
+
+        &_image {
+
+        }
+
+        &_header {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e4e7;
+        }
+
+        &_value {
+            display: flex;
+            align-items: center;
+            margin-top: -6.5px;
+        }
+
+        &_footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 14px;
+        }
+    }
+}

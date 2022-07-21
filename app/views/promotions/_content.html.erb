@@ -4,20 +4,22 @@
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item" role="presentation">
       <button
-        type="button"
-        id="react-aria-1-tab-Property"
-        role="tab"
-        data-rr-ui-event-key="Property"
-        aria-controls="react-aria-1-tabpane-Property"
-        aria-selected="true"
         class="siTab nav-link active"
+        type="button"
+        id="properties-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#properties-tab-pane"
+        aria-controls="properties-tab-pane"
+        aria-selected="true"
       >
         Property
       </button>
     </li>
   </ul>
+
   <div class="tab-content">
-    <div role="tabpanel" id="react-aria-1-tabpane-Property" aria-labelledby="react-aria-1-tab-Property" class="fade tab-pane active show">
+    <div role="tabpanel" id="properties-tab-pane" aria-labelledby="properties-tab" class="fade tab-pane active show" tabindex="0">
       <%= turbo_frame_tag :properties, class: "promotionsList", "data-controller": "property-card" do %>
         <%= render partial: 'promotions/property_card', collection: @properties %>
       <% end %>
@@ -28,7 +30,7 @@
     <button class="no-box-shadow dropdown-toggle btn btn-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       <span class="siText siText__regular siText__colorPrimary">Sort by minimum investments: none</span>
     </button>
-    <ul class="dropdown-menu  dropdown-menu-end">
+    <ul class="dropdown-menu dropdown-menu-end">
       <li><a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">high to low</a></li>
       <li><a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">low to high</a></li>
       <li><a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">none</a></li>

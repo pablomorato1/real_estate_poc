@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AssetCardController from "./asset_card_controller.js"
+application.register("asset-card", AssetCardController)
+
 import LinkController from "./link_controller.js"
 application.register("link", LinkController)
 
