@@ -23,7 +23,8 @@ if Property.all.empty?
       min_investment: rand(1000...5000).to_f,
       prop_type: "passive",
       min_equity: rand(1..15).to_f,
-      presentation_url: Faker::LoremFlickr.image
+      presentation_url: Faker::LoremFlickr.image,
+      show_on_dashboard: index <= 5
     )
 
     property.image.attach(io: image, filename: "property_#{index}_image.jpg")

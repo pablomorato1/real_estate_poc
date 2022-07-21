@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_19_112953) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_21_151133) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_19_112953) do
     t.string "prop_type", default: "passive"
     t.float "min_equity", default: 0.0
     t.string "presentation_url"
+    t.boolean "show_on_dashboard", default: false
   end
 
   create_table "property_prices", force: :cascade do |t|
