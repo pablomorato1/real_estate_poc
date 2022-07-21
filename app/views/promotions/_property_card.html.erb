@@ -1,7 +1,7 @@
 <div
   class="promotions_card"
   data-property-card-target="card"
-  data-property-card-url-param="/properties/<%= property_card[:id] %>/overview"
+  data-property-card-url-param="/properties/<%= property_card.id %>/overview"
   data-action="click->property-card#navigateToDetails"
 >
   <%= image_tag (property_card.image.present? ? url_for(property_card.image) : "logo.png"), class: "promotions_card_image", width: 140, height: 140, alt: "preview" %>
@@ -11,13 +11,13 @@
         <p class="siText mb-2 siText__label siText__colorPrimary"><%= property_card.name %></p>
         <div class="d-flex mb-3 align-items-center">
           <span class="siText siText__regular siText__colorPrimary"><%= property_card.address %></span>
-          <span class="Badge_base ms-2">active</span>
+          <span class="siBadge ms-2"><%= (property_card.prop_type == 'passive') ? 'passive' : 'active' %></span>
         </div>
       </div>
       <button
         type="button"
         class="btn btn-secondary btn-lg"
-        data-property-card-url-param="<%= property_card[:id] %>"
+        data-property-card-url-param="<%= property_card.id %>"
         data-property-card-target="request"
         data-action="click->property-card#sendBuyRequest:stop"
       >

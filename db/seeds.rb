@@ -21,6 +21,7 @@ if Property.all.empty?
       price: rand(100000...250000).to_f,
       managed_equity: 100.0,
       min_investment: rand(1000...5000).to_f,
+      # TODO: add promoted property e.g. show_at_dashboard
       prop_type: "passive",
       min_equity: rand(1..15).to_f,
       presentation_url: Faker::LoremFlickr.image
