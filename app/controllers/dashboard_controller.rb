@@ -160,5 +160,11 @@ class DashboardController < ApplicationController
         "walletId": "cl5qh7nfb0052a4rswtc4usrz"
       }
     ]
+    @wallet = {
+      "free_value": 51234,
+      "assessed_value": 100432,
+      "invested_value": 200,
+      "income": 300,
+    }
   end
 end
