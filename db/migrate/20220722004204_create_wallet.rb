@@ -13,6 +13,6 @@ class CreateWallet < ActiveRecord::Migration[7.0]
   end
 
   def down
-    # raise IrreversibleMigration
+    raise IrreversibleMigration
   end
 end
