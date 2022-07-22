@@ -18,3 +18,6 @@ application.register("link", LinkController)
 
 import PropertyCardController from "./property_card_controller.js"
 application.register("property-card", PropertyCardController)
+
+import TabsController from "./tabs_controller.js"
+application.register("tabs", TabsController)

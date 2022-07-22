@@ -3,17 +3,18 @@
 <%= turbo_stream_from :properties %>
 
 <div class="portfolioContent">
-  <ul class="nav nav-tabs" id="portfolioTabs" role="tablist">
+  <ul class="nav nav-tabs" id="portfolioTabs" role="tablist" data-controller="tabs">
     <li class="nav-item" role="presentation">
       <button
-        class="siTab nav-link active"
+        class="siTab nav-link"
         type="button"
-        id="active-assets-tab"
+        id="active-tab"
         role="tab"
         data-bs-toggle="tab"
-        data-bs-target="#active-assets-tab-pane"
-        aria-controls="active-assets-tab-pane"
-        aria-selected="true"
+        data-bs-target="#active-tab-pane"
+        aria-controls="active-tab-pane"
+        data-tabs-target="item"
+        aria-selected="<%= params[:tab] == 'active' %>"
       >
         Active
       </button>
@@ -22,11 +23,13 @@
       <button
         class="siTab nav-link"
         type="button"
-        id="archived-assets-tab"
+        id="archive-tab"
         role="tab"
         data-bs-toggle="tab"
-        data-bs-target="#archived-assets-tab-pane"
-        aria-controls="archived-assets-tab-pane"
+        data-bs-target="#archive-tab-pane"
+        aria-controls="archive-tab-pane"
+        data-tabs-target="item"
+        aria-selected="<%= params[:tab] == 'archive' %>"
       >
         Archive
       </button>
@@ -34,12 +37,12 @@
   </ul>
 
   <div class="tab-content" id="portfolioTabsContent">
-    <div role="tabpanel" id="active-assets-tab-pane" aria-labelledby="active-assets-tab" class="fade tab-pane active show" tabindex="0">
+    <div role="tabpanel" id="active-tab-pane" aria-labelledby="active-tab" class="fade tab-pane active show" tabindex="0">
       <%= turbo_frame_tag :active_assets, class: "portfolioList", "data-controller": "asset-card" do %>
         <%= render partial: 'portfolio/asset_card', collection: @active_assets, properties: @properties %>
       <% end %>
     </div>
-    <div role="tabpanel" id="archived-assets-tab-pane" aria-labelledby="archived-assets-tab" class="fade tab-pane" tabindex="0">
+    <div role="tabpanel" id="archive-tab-pane" aria-labelledby="archive-tab" class="fade tab-pane" tabindex="0">
       <%= turbo_frame_tag :active_assets, class: "portfolioList", "data-controller": "asset-card" do %>
         <%= render partial: 'portfolio/asset_card', collection: @archived_assets, properties: @properties %>
       <% end %>

@@ -1,17 +1,18 @@
 <%= turbo_stream_from :properties %>
 
 <div class="promotionsContent">
-  <ul class="nav nav-tabs" role="tablist">
+  <ul class="nav nav-tabs" role="tablist" data-controller="tabs">
     <li class="nav-item" role="presentation">
       <button
-        class="siTab nav-link active"
+        class="siTab nav-link"
         type="button"
         id="properties-tab"
         role="tab"
         data-bs-toggle="tab"
         data-bs-target="#properties-tab-pane"
         aria-controls="properties-tab-pane"
-        aria-selected="true"
+        data-tabs-target="item"
+        aria-selected="<%= params[:tab] == 'properties' %>"
       >
         Property
       </button>
