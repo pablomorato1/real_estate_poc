@@ -4,14 +4,14 @@
   data-asset-card-url-param="/properties/<%= asset_card[:id] %>/asset"
   data-action="click->asset-card#navigateToDetails"
 >
-  <img class="assets_card_image" src="<%= asset_card[:thumbnail] %>" width="140" height="140" alt="preview">
+  <%= image_tag url_for(@properties.find { |prop| prop.id == asset_card[:propertyId] }.image), class: "assets_card_image", width: 140, height: 140, alt: "preview" %>
   <div class="p-3 flex-fill">
     <div class="portfolio_card_header">
       <div>
-        <p class="siText mb-2 siText__label siText__colorPrimary"><%= @properties[0].name %></p>
+        <p class="siText mb-2 siText__label siText__colorPrimary"><%= @properties.find { |prop| prop.id == asset_card[:propertyId] }.name %></p>
         <div class="d-flex mb-3 align-items-center">
-          <span class="siText siText__regular siText__colorPrimary"><%= @properties[0].address %></span>
-          <span class="siBadge ms-2"><%= (asset_card[:effort] == 'PASSIVE') ? 'passive' : 'active' %></span>
+          <span class="siText siText__regular siText__colorPrimary"><%= @properties.find { |prop| prop.id == asset_card[:propertyId] }.address %></span>
+          <span class="siBadge ms-2"><%= (@properties.find { |prop| prop.id == asset_card[:propertyId] }.prop_type == 'passive') ? 'passive' : 'active' %></span>
         </div>
       </div>
       <button
@@ -39,7 +39,7 @@
       </div>
       <div>
         <p class="siText siText__label siText__colorPrimary">Property cost</p>
-        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary"><%= @properties[0].price %></p>
+        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary"><%= @properties.find { |prop| prop.id == asset_card[:propertyId] }.price %></p>
       </div>
       <div>
         <p class="siText siText__label siText__colorPrimary">Total income</p>
