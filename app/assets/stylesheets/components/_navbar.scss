@@ -22,7 +22,6 @@
         gap: 12px;
         text-decoration: none;
         transition: color 0.5s;
-        margin-left: 12px;
 
         &__selected, &:hover {
             color: #E08043 !important;
@@ -50,7 +49,7 @@
             transition: opacity 0.5s;
 
             &[alt=exit] {
-                right: -23px;
+                right: 1px;
             }
         }
 
@@ -62,6 +61,10 @@
     &_footer {
         padding: 24px 80px 24px 58px;
         border-top: #E5E4E7 1px solid;
+
+        & > .siNavbar_link {
+            gap: 0;
+        }
 
         &_item {
             display: flex;
