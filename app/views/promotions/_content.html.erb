@@ -26,14 +26,45 @@
     </div>
   </div>
 
-  <div class="dropdown promotionsSortControl">
+  <div class="dropdown promotionsSortControl" data-controller="dropdown">
     <button class="no-box-shadow dropdown-toggle btn btn-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <span class="siText siText__regular siText__colorPrimary">Sort by minimum investments: none</span>
+      <span class="siText siText__regular siText__colorPrimary" data-dropdown-target="title">Sort by minimum investments:</span>
     </button>
     <ul class="dropdown-menu dropdown-menu-end">
-      <li><a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">high to low</a></li>
-      <li><a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">low to high</a></li>
-      <li><a data-rr-ui-dropdown-item="" class="dropdown-item" role="button" tabindex="0" href="#">none</a></li>
+      <li>
+        <div
+          class="dropdown-item"
+          role="button"
+          tabindex="0"
+          data-dropdown-target="item"
+          data-action="click->dropdown#selectItem"
+        >
+          high to low
+        </div>
+      </li>
+      <li>
+        <div
+          class="dropdown-item"
+          role="button"
+          tabindex="0"
+          data-dropdown-target="item"
+          data-action="click->dropdown#selectItem"
+        >
+          low to high
+        </div>
+      </li>
+      <li>
+        <div
+          class="dropdown-item"
+          role="button"
+          tabindex="0"
+          data-dropdown-target="item"
+          data-default
+          data-action="click->dropdown#selectItem"
+        >
+          none
+        </div>
+      </li>
     </ul>
   </div>
 </div>
