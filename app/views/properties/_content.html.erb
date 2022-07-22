@@ -25,103 +25,36 @@
         data-bs-target="#asset-tab-pane"
         aria-controls="asset-tab-pane"
         aria-selected="true"
+        tabindex="-1"
       >
         Portfolio
       </button>
     </li>
     <li class="nav-item" role="presentation">
       <button
-        class="PropertyPage_tab nav-link active"
+        class="PropertyPage_tab nav-link"
         type="button"
-        id="achieve-tab"
+        id="archive-tab"
         role="tab"
         data-bs-toggle="tab"
-        data-bs-target="#achieve-tab-pane"
-        aria-controls="achieve-tab-pane"
-        aria-selected="true"
+        data-bs-target="#archive-tab-pane"
+        aria-controls="archive-tab-pane"
+        aria-selected="false"
+        tabindex="-1"
       >
-        Achieve
+        Archive
       </button>
     </li>
   </ul>
   <div class="tab-content">
     <div role="tabpanel" id="overview-tab-pane" aria-labelledby="overview-tab" class="fade tab-pane">
-      <div class="PropertyDescription_base__PxGFG">
-        <div class="PropertyDescription_base_header__rdPJZ">
-          <div>
-            <div class="d-flex mb-1 align-items-center">
-              <p class="Text_base__RlowI Text_base__header___nL6m Text_base__colorPrimary__QRlVt">Pacocha, Bruen and
-                Kshlerin</p><span class="Badge_base__iJzp2 ms-2">passive</span></div>
-            <span class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">423 Ferry Viaduct Apt. 121</span>
-          </div>
-        </div>
-        <div class="PropertyDescription_base_values__CDHXF">
-          <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Minimum investment</p>
-            <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorSecondary__LbuV4">16&nbsp;331&nbsp;$</p>
-          </div>
-          <div class="Delimiter_horizontal__x7GPr"></div>
-          <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Equity</p>
-            <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorSecondary__LbuV4">78,19&nbsp;%</p>
-          </div>
-          <div class="Delimiter_horizontal__x7GPr"></div>
-          <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Projected yield</p>
-            <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorSecondary__LbuV4">14-21&nbsp;%</p>
-          </div>
-          <div class="Delimiter_horizontal__x7GPr"></div>
-          <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Property cost</p>
-            <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorPrimary__QRlVt">287&nbsp;822&nbsp;$</p>
-          </div>
-          <div class="Delimiter_horizontal__x7GPr"></div>
-          <div>
-            <p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Cost per square meter</p>
-            <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorPrimary__QRlVt">6&nbsp;257&nbsp;$</p>
-          </div>
-        </div>
-      </div>
+      <%= render partial: 'properties/overview' %>
     </div>
     <div role="tabpanel" id="asset-tab-pane" aria-labelledby="asset-tab" class="fade tab-pane active show">
-      <div class="AssetDescription_base__5tABF">
-        <div class="AssetDescription_header__FBpje">
-          <div class="AssetDescription_header_details__zMkzT">
-            <div>
-              <div class="d-flex mb-1 align-items-center">
-                <p class="Text_base__RlowI Text_base__header___nL6m Text_base__colorPrimary__QRlVt">Pacocha, Bruen and
-                  Kshlerin</p><span class="Badge_base__iJzp2 ms-2 mt-1">passive</span>
-                <p class="Text_base__RlowI ms-2 Text_base__regular__gLM9C Text_base__colorPrimary__QRlVt Text_base__w400__oJlVD">18
-                  июл. 2022 г.</p></div>
-              <span class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">423 Ferry Viaduct Apt. 121</span>
-            </div>
-            <div class="AssetDescription_buttons___sh93">
-              <button type="button" class="btn btn-primary btn-lg">Sell equity</button>
-              <button type="button" class="btn btn-secondary btn-lg">Acquire equity</button>
-            </div>
-            <div class="w-100 mt-2 mb-0 Delimiter_horizontal__x7GPr"></div>
-            <div class="mt-4 mb-4">
-              <p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Total income</p>
-              <p class="Text_base__RlowI mt-2 Text_base__title__zerUD Text_base__colorSuccess__1pIqq">0&nbsp;$</p></div>
-            <div class="w-100 m-0 Delimiter_horizontal__x7GPr"></div>
-            <div class="w-100 mt-4 mb-4 d-flex flex-row justify-content-between">
-              <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">My equity</p>
-                <p class="Text_base__RlowI mt-2 Text_base__title__zerUD Text_base__colorPrimary__QRlVt">21,81&nbsp;%</p>
-              </div>
-              <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Total cost</p>
-                <p class="Text_base__RlowI mt-2 Text_base__title__zerUD Text_base__colorPrimary__QRlVt">287&nbsp;822&nbsp;$</p>
-              </div>
-              <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Equity cost</p>
-                <p class="Text_base__RlowI mt-2 Text_base__title__zerUD Text_base__colorPrimary__QRlVt">62&nbsp;779&nbsp;$</p>
-              </div>
-            </div>
-            <div class="w-100 m-0 Delimiter_horizontal__x7GPr"></div>
-          </div>
-          <div class="PriceChangeChart_base__PH8Xs card">
-            <p class="Text_base__RlowI Text_base__subtitle__mpnY4 Text_base__colorPrimary__QRlVt">Cost history</p>
-            <canvas role="img" height="317" width="696" style="display: block; box-sizing: border-box; height: 253.6px; width: 556.8px;"></canvas>
-          </div>
-        </div>
-      </div>
+      <%= render partial: 'properties/asset' %>
     </div>
-    <div role="tabpanel" id="achieve-tab-pane" aria-labelledby="achieve-tab" class="fade tab-pane active show">
-      Achieve
+    <div role="tabpanel" id="archive-tab-pane" aria-labelledby="archive-tab" class="fade tab-pane active show">
+      <%= render partial: 'properties/archive' %>
     </div>
   </div>
 </div>

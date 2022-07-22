@@ -45,7 +45,7 @@ class PortfolioController < ApplicationController
         },
     ]
 
-    @achieved_assets = [
+    @archived_assets = [
       {
         "id": "cl5qh8dzp0710a4rs9iq90yiv",
         "investedTotal": 265995,
