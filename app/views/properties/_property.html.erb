@@ -6,7 +6,7 @@
         <div class="w-25">
           <p class="card-text mb-1">
             <small class="text-muted">
-              <%= link_to property.name, property_path(property), method: :get, class: "text-muted", data: { turbo_frame: "_top" } %>
+              <%= link_to property.name, property_path(property, tab: 'overview'), method: :get, class: "text-muted", data: { turbo_frame: "_top" } %>
             </small>
           </p>
           <h5 class="card-title"><%= property.address %></h5>

@@ -1,7 +1,7 @@
 <div
   class="portfolio_card"
   data-asset-card-target="card"
-  data-asset-card-url-param="/properties/<%= asset_card[:id] %>/asset"
+  data-asset-card-url-param="/properties/<%= @properties.find { |prop| prop.id == asset_card[:propertyId] }.id %>?tab=asset"
   data-action="click->asset-card#navigateToDetails"
 >
   <%= image_tag url_for(@properties.find { |prop| prop.id == asset_card[:propertyId] }.image), class: "assets_card_image", width: 140, height: 140, alt: "preview" %>

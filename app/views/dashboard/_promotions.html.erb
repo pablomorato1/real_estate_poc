@@ -2,6 +2,11 @@
   <img class="promotions_image" src="<%= promotions[:images][0] %>" alt="preview"/>
   <div class="promotions_texts">
     <p class="siText siText__regular siText__colorWhite"><%= promotions[:name] %></p>
-    <a class="siText promotions_link siText__label siText__colorSecondary" href="/properties/<%= promotions[:id] %>/overview">Details<%= show_svg('arrow-right-orange.svg') %></a>
+    <a
+      class="siText promotions_link siText__label siText__colorSecondary"
+      href="/properties/<%= promotions[:id] %>?tab=overview"
+    >
+      Details<%= show_svg('arrow-right-orange.svg') %>
+    </a>
   </div>
 </div>

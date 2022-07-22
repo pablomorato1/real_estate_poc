@@ -1,7 +1,7 @@
 <div
   class="promotions_card"
   data-property-card-target="card"
-  data-property-card-url-param="/properties/<%= property_card.id %>/overview"
+  data-property-card-url-param="/properties/<%= property_card.id %>?tab=overview"
   data-action="click->property-card#navigateToDetails"
 >
   <%= image_tag (property_card.image.present? ? url_for(property_card.image) : "logo.png"), class: "promotions_card_image", width: 140, height: 140, alt: "preview" %>
