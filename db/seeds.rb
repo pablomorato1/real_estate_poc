@@ -17,7 +17,8 @@ if Property.all.empty?
       name: "Property #{index}",
       address: "Sample's street, #{100 + index}",
       area: rand(100...250).to_f,
-      yield_plan: "#{rand(5...10)}-#{rand(11..15)}%",
+      # all formatting should be done at FE side
+      yield_plan: "#{rand(5...10)}-#{rand(11..15)}",
       price: rand(100000...250000).to_f,
       managed_equity: 100.0,
       min_investment: rand(1000...5000).to_f,

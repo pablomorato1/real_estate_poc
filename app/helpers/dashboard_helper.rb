@@ -1,10 +1,10 @@
 module DashboardHelper
   def mock_data
     {
-      "freeValue": '51 234 $',
-      "assessedValue": '100 432 $',
-      "investedValue": '200 $',
-      "income": "300 $",
+      "freeValue": 51234,
+      "assessedValue": 100432,
+      "investedValue": 200,
+      "income": 300,
       properties: [
         {
           "id": "cl5qh7x2n0163a4rskvqthpu3",
@@ -29,7 +29,7 @@ module DashboardHelper
             "http://loremflickr.com/640/480/city?76356",
             "http://loremflickr.com/640/480/city?36244"
           ],
-          "effort": "PASSIVE"
+          "effort": "passive"
         },
         {
           "id": "cl5qh7yox0233a4rsbdzr5fkj",
@@ -49,7 +49,7 @@ module DashboardHelper
             "http://loremflickr.com/640/480/city?62051",
             "http://loremflickr.com/640/480/city?14340"
           ],
-          "effort": "PASSIVE"
+          "effort": "passive"
         },
         {
           "id": "cl5qh7zid0274a4rso28ad9a5",
@@ -74,7 +74,7 @@ module DashboardHelper
             "http://loremflickr.com/640/480/city?10022",
             "http://loremflickr.com/640/480/city?43759"
           ],
-          "effort": "PASSIVE"
+          "effort": "passive"
         },
         {
           "id": "cl5qh7w9e0140a4rsck5a1tfv",
@@ -97,7 +97,7 @@ module DashboardHelper
             "http://loremflickr.com/640/480/city?51180",
             "http://loremflickr.com/640/480/city?22782"
           ],
-          "effort": "PASSIVE"
+          "effort": "passive"
         }
       ],
       transactions: [

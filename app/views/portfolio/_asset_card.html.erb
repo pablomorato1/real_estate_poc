@@ -27,23 +27,23 @@
     <div class="portfolio_card_footer">
       <div>
         <p class="siText siText__label siText__colorPrimary">Equity cost</p>
-        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary"><%= asset_card[:equityCost] %></p>
+        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary" data-i18n-target="$"><%= asset_card[:equityCost] %></p>
       </div>
       <div>
         <p class="siText siText__label siText__colorPrimary">Equity</p>
-        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary"><%= asset_card[:equity] %></p>
+        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary" data-i18n-target="percent"><%= asset_card[:equity] %></p>
       </div>
       <div>
         <p class="siText siText__label siText__colorPrimary">Projected yield</p>
-        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary"><%= asset_card[:projectedYield] %></p>
+        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary" data-i18n-target="percent"><%= asset_card[:projectedYield] %></p>
       </div>
       <div>
         <p class="siText siText__label siText__colorPrimary">Property cost</p>
-        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary"><%= @properties.find { |prop| prop.id == asset_card[:propertyId] }.price %></p>
+        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary" data-i18n-target="$"><%= @properties.find { |prop| prop.id == asset_card[:propertyId] }.price %></p>
       </div>
       <div>
         <p class="siText siText__label siText__colorPrimary">Total income</p>
-        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary"><%= asset_card[:income] %></p>
+        <p class="portfolio_card_value siText siText__subtitle siText__colorPrimary" data-i18n-target="$"><%= asset_card[:income] %></p>
       </div>
     </div>
   </div>

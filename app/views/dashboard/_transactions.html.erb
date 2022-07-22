@@ -5,9 +5,9 @@
     <p class="siText siText__label siText__colorGrey"><%= transactions[:description] %></p>
   </div>
   <div class="transitions_values">
-    <p class="siText siText__regularBold siText__colorSuccess"><%= transactions[:value] %></p>
+    <p class="siText siText__regularBold siText__colorSuccess" data-i18n-target="$"><%= transactions[:value] %></p>
     <div class="transitions_values_description">
-      <p class="siText siText__label siText__colorPrimary"><%= transactions[:annual] %></p>
+      <p class="siText siText__label siText__colorPrimary" data-i18n-target="percent"><%= transactions[:annual] %></p>
       <p class="siText siText__label siText__colorGrey">annual</p>
     </div>
   </div>

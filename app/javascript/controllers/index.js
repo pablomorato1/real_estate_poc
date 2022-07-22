@@ -10,6 +10,9 @@ application.register("asset-card", AssetCardController)
 import DropdownController from "./dropdown_controller.js"
 application.register("dropdown", DropdownController)
 
+import I18nController from "./i18n_controller.js"
+application.register("i18n", I18nController)
+
 import LinkController from "./link_controller.js"
 application.register("link", LinkController)
 
