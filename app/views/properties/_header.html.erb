@@ -1,1 +1,12 @@
-<h3>Portfolio</h3>
+<div>
+  <%= image_tag url_for('property-preview.png'), class: "propertyPage_headerImage" %>
+  <button type="button" class="propertyPage_backButton btn btn-text">
+    <%= show_svg('arrow-left-white.svg') %>
+    <span class="siText__regular siText__colorWhite">
+      Promotions
+    </span>
+  </button>
+  <button type="button" class="propertyPage_historyButton btn btn-light">
+    Portfolio history<%= show_svg('icon-history.svg') %>
+  </button>
+</div>

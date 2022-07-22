@@ -1,0 +1,41 @@
+.propertyPage {
+    &_headerImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        min-height: 240px;
+    }
+
+    &_backButton {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &_historyButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        min-width: 185px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    &_content {
+        flex: 1 1;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 70px 32px 32px;
+        z-index: 1;
+    }
+}
