@@ -37,14 +37,14 @@
   </ul>
 
   <div class="tab-content" id="portfolioTabsContent">
-    <div role="tabpanel" id="active-tab-pane" aria-labelledby="active-tab" class="fade tab-pane active show" tabindex="0">
+    <div role="tabpanel" id="active-tab-pane" aria-labelledby="active-tab" class="fade tab-pane" tabindex="0">
       <%= turbo_frame_tag :active_assets, class: "portfolioList", "data-controller": "asset-card" do %>
         <%= render partial: 'portfolio/asset_card', collection: @active_assets, properties: @properties %>
       <% end %>
     </div>
     <div role="tabpanel" id="archive-tab-pane" aria-labelledby="archive-tab" class="fade tab-pane" tabindex="0">
       <%= turbo_frame_tag :active_assets, class: "portfolioList", "data-controller": "asset-card" do %>
-        <%= render partial: 'portfolio/asset_card', collection: @archived_assets, properties: @properties %>
+        <%= render partial: 'portfolio/archive_card', collection: @archived_assets, properties: @properties %>
       <% end %>
     </div>
   </div>

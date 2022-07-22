@@ -20,7 +20,7 @@
   </ul>
 
   <div class="tab-content">
-    <div role="tabpanel" id="properties-tab-pane" aria-labelledby="properties-tab" class="fade tab-pane active show" tabindex="0">
+    <div role="tabpanel" id="properties-tab-pane" aria-labelledby="properties-tab" class="fade tab-pane" tabindex="0">
       <%= turbo_frame_tag :properties, class: "promotionsList", "data-controller": "property-card" do %>
         <%= render partial: 'promotions/property_card', collection: @properties %>
       <% end %>

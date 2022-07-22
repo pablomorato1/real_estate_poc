@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
+import { Tab } from "bootstrap";
 
 // Connects to data-controller="tabs"
 export default class extends Controller {
@@ -22,7 +23,8 @@ export default class extends Controller {
         element.addEventListener('click', this.handleItemClick);
         
         if (element.getAttribute('aria-selected') === 'true') {
-            element.classList.add('active');
+            const tab = new Tab(element)
+            tab.show()
         }
     }
     
