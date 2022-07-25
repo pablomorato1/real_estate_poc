@@ -212,4 +212,14 @@
         align-items: center;
         margin-top: 6px;
     }
+
+    &_row {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+
+        & > * {
+            flex: 1;
+        }
+    }
 }

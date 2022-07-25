@@ -42,4 +42,17 @@
       <p class="overview_value siText siText__title siText__colorPrimary" data-i18n-target="$">6257</p>
     </div>
   </div>
+  <div class="overview_row">
+    <div>
+      <p class="siText siText__subtitle siText__colorPrimary mb-4">Portfolio history</p>
+      <div class="w-100 m-0 delimiter delimiter__horizontal"></div>
+      <%= turbo_frame_tag :cost_transactions do %>
+        <%= render partial: 'properties/transaction_cost', collection: @cost_transactions %>
+      <% end %>
+    </div>
+    <div class="assets_chart card">
+      <p class="siText siText__subtitle siText__colorPrimary">Cost history</p>
+      <canvas role="img" height="auto" width="auto"></canvas>
+    </div>
+  </div>
 </div>
