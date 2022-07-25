@@ -1,32 +1,45 @@
-<div class="PropertyDescription_base__PxGFG">
-  <div class="PropertyDescription_base_header__rdPJZ">
+<div>
+  <div class="overview_title">
     <div>
       <div class="d-flex mb-1 align-items-center">
-        <p class="Text_base__RlowI Text_base__header___nL6m Text_base__colorPrimary__QRlVt">Pacocha, Bruen and
-          Kshlerin</p><span class="Badge_base__iJzp2 ms-2">passive</span></div>
-      <span class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">423 Ferry Viaduct Apt. 121</span>
+        <span class="siText siText__header siText__colorPrimary"><%= @property.name %></span>
+        <span class="siBadge ms-2"><%= (@property.prop_type == 'passive') ? 'passive' : 'active' %></span>
+      </div>
+      <span class="siText siText__label siText__colorPrimary"><%= @property.address %></span>
     </div>
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg"
+        data-equity-url-param="<%= @property.id %>"
+        data-action="click->equity#sendBuyRequest"
+      >
+        Send request
+      </button>
   </div>
-  <div class="PropertyDescription_base_values__CDHXF">
-    <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Minimum investment</p>
-      <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorSecondary__LbuV4">16&nbsp;331&nbsp;$</p>
-    </div>
-    <div class="Delimiter_horizontal__x7GPr"></div>
-    <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Equity</p>
-      <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorSecondary__LbuV4">78,19&nbsp;%</p>
-    </div>
-    <div class="Delimiter_horizontal__x7GPr"></div>
-    <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Projected yield</p>
-      <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorSecondary__LbuV4">14-21&nbsp;%</p>
-    </div>
-    <div class="Delimiter_horizontal__x7GPr"></div>
-    <div><p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Property cost</p>
-      <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorPrimary__QRlVt">287&nbsp;822&nbsp;$</p>
-    </div>
-    <div class="Delimiter_horizontal__x7GPr"></div>
+  <div class="d-flex flex-row justify-content-between pv-5">
     <div>
-      <p class="Text_base__RlowI Text_base__label__vKcJN Text_base__colorPrimary__QRlVt">Cost per square meter</p>
-      <p class="Text_base__RlowI PropertyDescription_base_value__COZkM Text_base__title__zerUD Text_base__colorPrimary__QRlVt">6&nbsp;257&nbsp;$</p>
+      <p class="siText siText__label siText__colorPrimary">Minimum investment</p>
+      <p class="overview_value siText siText__title siText__colorSecondary" data-i18n-target="$">16331</p>
+    </div>
+    <div class="delimiter delimiter__vertical"></div>
+    <div>
+      <p class="siText siText__label siText__colorPrimary">Equity</p>
+      <p class="overview_value siText siText__title siText__colorSecondary" data-i18n-target="percent">78.19</p>
+    </div>
+    <div class="delimiter delimiter__vertical"></div>
+    <div>
+      <p class="siText siText__label siText__colorPrimary">Projected yield</p>
+      <p class="overview_value siText siText__title siText__colorSecondary" data-i18n-target="percent">14-21</p>
+    </div>
+    <div class="delimiter delimiter__vertical"></div>
+    <div>
+      <p class="siText siText__label siText__colorPrimary">Property cost</p>
+      <p class="overview_value siText siText__title siText__colorPrimary" data-i18n-target="$">287822</p>
+    </div>
+    <div class="delimiter delimiter__vertical"></div>
+    <div>
+      <p class="siText siText__label siText__colorPrimary">Cost per square meter</p>
+      <p class="overview_value siText siText__title siText__colorPrimary" data-i18n-target="$">6257</p>
     </div>
   </div>
 </div>

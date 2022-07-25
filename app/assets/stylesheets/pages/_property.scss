@@ -40,7 +40,7 @@
 
         & > .tab-content {
             overflow-y: auto;
-            padding: 0 32px 0 0;
+            padding: 0 32px 32px 0;
         }
     }
 
@@ -196,5 +196,20 @@
             padding: 14px 0;
             border-bottom: #E5E4E7 1px solid;
         }
+    }
+}
+
+.overview {
+    &_title {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    &_value {
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
     }
 }
