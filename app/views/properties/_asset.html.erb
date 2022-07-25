@@ -5,7 +5,7 @@
         <div class="d-flex mb-1 align-items-center">
           <span class="siText siText__header siText__colorPrimary"><%= @property.name %></span>
           <span class="siBadge ms-2"><%= (@property.prop_type == 'passive') ? 'passive' : 'active' %></span>
-          <p class="siText ms-2 siText__regular siText__colorPrimary siText__w400"><%= @property.created_at.to_date %></p>
+          <p class="siText ms-2 siText__regular siText__colorPrimary siText__w400" data-i18n-target="date"><%= @property.created_at %></p>
         </div>
         <span class="siText siText__label siText__colorPrimary"><%= @property.address %></span>
       </div>
@@ -28,9 +28,16 @@
         </button>
       </div>
       <div class="w-100 mt-2 mb-0 delimiter delimiter__horizontal"></div>
-      <div class="mt-4 mb-4">
-        <p class="siText siText__label siText__colorPrimary">Total income</p>
-        <p class="siText mt-2 siText__title siText__colorSuccess" data-i18n-target="$">0</p>
+      <div class="mt-4 mb-4 d-flex flex-row gap-5">
+        <div>
+          <p class="siText siText__label siText__colorPrimary">Total income</p>
+          <p class="siText mt-2 siText__title siText__colorSuccess" data-i18n-target="$">0</p>
+        </div>
+        <div>
+          <p class="siText siText__label siText__colorPrimary">Investment time</p>
+          <p class="siText mt-2 siText__subtitle siText__colorPrimary">
+            <span data-i18n-target="date"><%= @property.created_at %></span> - Present</p>
+        </div>
       </div>
       <div class="w-100 m-0 delimiter delimiter__horizontal"></div>
       <div class="w-100 mt-4 mb-4 d-flex flex-row justify-content-between">

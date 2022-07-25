@@ -9,7 +9,7 @@ export default class I18nController extends Controller {
             return navigator.userLanguage || navigator.language || navigator.browserLanguage || 'en';
         }
     };
-    static targets = ["$", "percent"];
+    static targets = ["$", "percent", "date"];
     static language = I18nController.getNavigatorLanguage();
     
     initialize() {
@@ -31,6 +31,11 @@ export default class I18nController extends Controller {
             minimumFractionDigits: 0,
             maximumFractionDigits: 2,
         }).format;
+        this.dateFormat = new Intl.DateTimeFormat(I18nController.language, {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        }).format;
     }
     
     $TargetConnected(element) {
@@ -38,12 +43,16 @@ export default class I18nController extends Controller {
     }
     
     percentTargetConnected(element) {
-        element.innerText = element.innerText.replace('%', '')
+        element.innerText = element.innerText.replace('%', '');
         if (element.innerText.includes('-')) {
             const [first, second] = element.innerText.split('-');
             element.innerText = `${this.decimalFormat(first)}-${this.percentsFormat(second / 100)}`;
         } else {
             element.innerText = this.percentsFormat(element.innerText / 100);
         }
+    }
+    
+    dateTargetConnected(element) {
+        element.innerText = this.dateFormat(new Date(element.innerText));
     }
 }

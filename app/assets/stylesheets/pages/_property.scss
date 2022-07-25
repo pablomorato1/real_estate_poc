@@ -91,9 +91,84 @@
 
     &_buttons {
         margin-top: 4px;
-        align-self: flex-end;
         display: flex;
         flex-direction: row;
+        justify-content: end;
+        gap: 18px;
+    }
+
+    &_chart {
+        border-radius: 10px;
+        padding: 16px 16px 45px;
+        height: 317px;
+    }
+
+    &_transactions {
+        &_cost {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: #E5E4E7 1px solid;
+        }
+
+        &_profit {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: #E5E4E7 1px solid;
+        }
+    }
+}
+
+.archive {
+    &_container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        &_values {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &_value {
+            display: flex;
+            align-items: center;
+            margin-top: 6px;
+        }
+    }
+
+    &_row {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+
+        & > * {
+            flex: 1;
+        }
+
+        &_details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        &_chart {
+        }
+    }
+
+    &_buttons {
+        margin-top: 4px;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
         gap: 18px;
     }
 
