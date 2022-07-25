@@ -21,7 +21,7 @@
 
   <div class="tab-content">
     <div role="tabpanel" id="properties-tab-pane" aria-labelledby="properties-tab" class="fade tab-pane" tabindex="0">
-      <%= turbo_frame_tag :properties, class: "promotionsList", "data-controller": "property-card" do %>
+      <%= turbo_frame_tag :properties, class: "promotionsList" do %>
         <%= render partial: 'promotions/property_card', collection: @properties %>
       <% end %>
     </div>

@@ -1,0 +1,12 @@
+<div class="assets_transactions_cost">
+  <div>
+    <p class="siText siText__label siText__colorMidGrey siText__w400"><%= transaction_cost[:createdAt].to_date.strftime("%d.%m.%Y") %></p>
+    <div class="transitions_names">
+      <p class="siText siText__regular siText__colorPrimary"><%= transaction_cost[:name] %></p>
+      <p class="siText siText__label siText__colorGrey"><%= transaction_cost[:description] %></p>
+    </div>
+  </div>
+  <!--  TODO: here we somehow should determine that is it price reduction transaction and apply 'siText__colorDanger' class-->
+  <p class="siText siText__regularBold siText__colorSuccess" data-i18n-target="$"><%= transaction_cost[:value] %></p>
+  <!--  <p class="siText siText__regularBold siText__colorDanger" data-i18n-target="$"><%#= transaction_cost[:value] %></p>-->
+</div>

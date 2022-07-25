@@ -1,9 +1,4 @@
-<div
-  class="portfolio_card"
-  data-asset-card-target="card"
-  data-asset-card-url-param="/properties/<%= @properties.find { |prop| prop.id == asset_card[:propertyId] }.id %>?tab=asset"
-  data-action="click->asset-card#navigateToDetails"
->
+<%= link_to property_path(@properties.find { |prop| prop.id == asset_card[:propertyId] }.id, tab: 'asset'), class: "portfolio_card" do %>
   <%= image_tag url_for(@properties.find { |prop| prop.id == asset_card[:propertyId] }.image), class: "assets_card_image", width: 140, height: 140, alt: "preview" %>
   <div class="p-3 flex-fill">
     <div class="portfolio_card_header">
@@ -17,9 +12,8 @@
       <button
         type="button"
         class="text-decoration-underline btn btn-text"
-        data-asset-card-url-param="<%= asset_card[:id] %>"
-        data-asset-card-target="request"
-        data-action="click->asset-card#sendBuyRequest:stop"
+        data-equity-url-param="<%= asset_card[:id] %>"
+        data-action="click->equity#sendBuyInRequest:prevent"
       >
         Acquire additional equity
       </button>
@@ -47,4 +41,4 @@
       </div>
     </div>
   </div>
-</div>
+<% end %>

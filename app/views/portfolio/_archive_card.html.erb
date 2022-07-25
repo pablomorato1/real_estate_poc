@@ -1,9 +1,4 @@
-<div
-  class="portfolio_card"
-  data-asset-card-target="card"
-  data-asset-card-url-param="/properties/<%= @properties.find { |prop| prop.id == archive_card[:propertyId] }.id %>?tab=archive"
-  data-action="click->asset-card#navigateToDetails"
->
+<%= link_to property_path(@properties.find { |prop| prop.id == archive_card[:propertyId] }.id, tab: 'archive'), class: "portfolio_card" do %>
   <%= image_tag url_for(@properties.find { |prop| prop.id == archive_card[:propertyId] }.image), class: "assets_card_image", width: 140, height: 140, alt: "preview" %>
   <div class="p-3 flex-fill">
     <div class="portfolio_card_header">
@@ -39,4 +34,4 @@
       </div>
     </div>
   </div>
-</div>
+<% end %>

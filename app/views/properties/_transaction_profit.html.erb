@@ -1,0 +1,22 @@
+<div class="assets_transactions_profit">
+  <div>
+    <p class="siText siText__label siText__colorMidGrey siText__w400"><%= transaction_profit[:createdAt].to_date.strftime("%d.%m.%Y") %></p>
+    <div class="transitions_names">
+      <p class="siText siText__regular siText__colorPrimary"><%= transaction_profit[:name] %></p>
+      <p class="siText siText__label siText__colorGrey"><%= transaction_profit[:description] %></p>
+    </div>
+  </div>
+  <div class="d-flex flex-row gap-3">
+    <div class="transitions_values">
+      <p class="siText siText__regularBold siText__colorSuccess" data-i18n-target="$"><%= transaction_profit[:value] %></p>
+      <div class="transitions_values_description">
+        <p class="siText siText__label siText__colorPrimary" data-i18n-target="percent"><%= transaction_profit[:annual] %></p>
+        <p class="siText siText__label siText__colorGrey">annual</p>
+      </div>
+    </div>
+    <a class="transitions_downloadBadge" href="<%= transaction_profit[:report] %>" download="Report">
+      <span class="siText siText__label siText__colorPrimary">Report</span>
+      <%= show_svg('icon-download.svg') %>
+    </a>
+  </div>
+</div>

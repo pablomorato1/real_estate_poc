@@ -1,9 +1,4 @@
-<div
-  class="promotions_card"
-  data-property-card-target="card"
-  data-property-card-url-param="/properties/<%= property_card.id %>?tab=overview"
-  data-action="click->property-card#navigateToDetails"
->
+<%= link_to property_path(property_card.id, tab: 'overview'), class: "promotions_card" do %>
   <%= image_tag (property_card.image.present? ? url_for(property_card.image) : "logo.png"), class: "promotions_card_image", width: 140, height: 140, alt: "preview" %>
   <div class="p-3 flex-fill">
     <div class="promotions_card_header">
@@ -17,9 +12,8 @@
       <button
         type="button"
         class="btn btn-secondary btn-lg"
-        data-property-card-url-param="<%= property_card.id %>"
-        data-property-card-target="request"
-        data-action="click->property-card#sendBuyRequest:stop"
+        data-equity-url-param="<%= property_card.id %>"
+        data-action="click->equity#sendBuyRequest:prevent"
       >
         Send Request
       </button>
@@ -47,4 +41,4 @@
       </div>
     </div>
   </div>
-</div>
+<% end %>

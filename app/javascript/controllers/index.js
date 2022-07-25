@@ -4,20 +4,17 @@
 
 import { application } from "./application"
 
-import AssetCardController from "./asset_card_controller.js"
-application.register("asset-card", AssetCardController)
-
 import DropdownController from "./dropdown_controller.js"
 application.register("dropdown", DropdownController)
+
+import EquityController from "./equity_controller.js"
+application.register("equity", EquityController)
 
 import I18nController from "./i18n_controller.js"
 application.register("i18n", I18nController)
 
 import LinkController from "./link_controller.js"
 application.register("link", LinkController)
-
-import PropertyCardController from "./property_card_controller.js"
-application.register("property-card", PropertyCardController)
 
 import TabsController from "./tabs_controller.js"
 application.register("tabs", TabsController)
