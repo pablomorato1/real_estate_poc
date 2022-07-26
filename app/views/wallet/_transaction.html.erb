@@ -1,0 +1,25 @@
+<div class="wallet_transaction">
+  <p class="siText wallet_transaction_date siText__label siText__colorMidGrey"><%= transaction[:createdAt].to_date.strftime("%d.%m.%Y") %></p>
+  <div class="wallet_transaction_names">
+    <p class="siText siText__regular siText__colorPrimary"><%= transaction[:name] %></p>
+    <p class="siText siText__label siText__colorGrey"><%= transaction[:description] %></p>
+  </div>
+  <div class="wallet_transaction_values">
+    <p class="siText siText__regularBold <%= transaction[:type] == "SELL_ASSET" || transaction[:type] == "EARNING" || transaction[:type] == "REPLENISHMENT" ? 'siText__colorSuccess' : 'wallet_transaction_value__red' %>">
+      <%= transaction[:type] == "SELL_ASSET" || transaction[:type] == "EARNING" || transaction[:type] == "REPLENISHMENT" ? '+ ' : '- ' %>
+      <span data-i18n-target="$"><%= transaction[:value] %></span>
+    </p>
+    <% if transaction[:annual].present? -%>
+      <div class="wallet_transaction_values_description">
+        <span class="siText siText__label siText__colorPrimary" data-i18n-target="percent"><%= transaction[:annual] %></span>
+        <span class="siText siText__label siText__colorGrey">annual</span>
+      </div>
+    <% end %>
+  </div>
+  <% if transaction[:report].present? -%>
+    <a class="wallet_transaction_downloadBadge" href="<%= transaction[:report] %>>" download="Report">
+      <span class="siText siText__label siText__colorPrimary">Report</span>
+      <%= show_svg('icon-download.svg') %>
+    </a>
+  <% end %>
+</div>
