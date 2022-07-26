@@ -22,6 +22,9 @@ export default class extends Controller {
                 }]
             },
             options: {
+                animation: {
+                    duration: 0
+                },
                 responsive: true,
                 maintainAspectRatio: false,
                 layout: {padding: -20},
