@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import ChartController from "./chart_controller.js"
+application.register("chart", ChartController)
+
 import DropdownController from "./dropdown_controller.js"
 application.register("dropdown", DropdownController)
 
