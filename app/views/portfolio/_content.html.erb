@@ -36,16 +36,16 @@
     </li>
   </ul>
 
-  <div class="tab-content" id="portfolioTabsContent">
+  <div class="tab-content">
     <div role="tabpanel" id="active-tab-pane" aria-labelledby="active-tab" class="fade tab-pane" tabindex="0">
-      <%= turbo_frame_tag :active_assets, class: "portfolioList" do %>
+      <div class="portfolioList">
         <%= render partial: 'portfolio/asset_card', collection: @active_assets, properties: @properties %>
-      <% end %>
+      </div>
     </div>
     <div role="tabpanel" id="archive-tab-pane" aria-labelledby="archive-tab" class="fade tab-pane" tabindex="0">
-      <%= turbo_frame_tag :active_assets, class: "portfolioList" do %>
+      <div class="portfolioList">
         <%= render partial: 'portfolio/archive_card', collection: @archived_assets, properties: @properties %>
-      <% end %>
+      </div>
     </div>
   </div>
 

@@ -1,3 +1,61 @@
-<div class="">
-Profile
+<div class="profile_container">
+  <ul class="nav nav-tabs" id="profileTabs" role="tablist" data-controller="tabs">
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link"
+        type="button"
+        id="info-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#info-tab-pane"
+        aria-controls="info-tab-pane"
+        data-tabs-target="item"
+        aria-selected="<%= params[:tab] == 'info' %>"
+      >
+        Info
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link"
+        type="button"
+        id="earnings-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#earnings-tab-pane"
+        aria-controls="earnings-tab-pane"
+        data-tabs-target="item"
+        aria-selected="<%= params[:tab] == 'earnings' %>"
+      >
+        Earnings
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link"
+        type="button"
+        id="password-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#password-tab-pane"
+        aria-controls="password-tab-pane"
+        data-tabs-target="item"
+        aria-selected="<%= params[:tab] == 'password' %>"
+      >
+        Earnings
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" id="info-tab-pane" aria-labelledby="info-tab-pane" class="fade tab-pane" tabindex="0">
+        <%= render partial: 'profile/personal_info' %>
+    </div>
+    <div role="tabpanel" id="earnings-tab-pane" aria-labelledby="earnings-tab" class="fade tab-pane" tabindex="0">
+        <%= render partial: 'profile/earnings' %>
+    </div>
+    <div role="tabpanel" id="password-tab-pane" aria-labelledby="password-tab" class="fade tab-pane" tabindex="0">
+        <%= render partial: 'profile/password' %>
+    </div>
+  </div>
 </div>
