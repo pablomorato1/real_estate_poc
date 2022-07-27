@@ -11,145 +11,87 @@
         padding: 33px 33px 0;
     }
 
-    &_stats {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        gap: 66px;
-        margin-bottom: 32px;
-
-        &_item {
-            margin-bottom: 3px;
-
-            &__huge {
-                font-weight: 600;
-                font-size: 52px;
-                line-height: 63px;
-                margin-top: -8px;
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    &_delimiter {
-        flex: 1;
-        margin: 0 50px 0 0;
-    }
-
-    &_transactions {
-        overflow-y: auto;
-        padding-right: 33px;
-    }
-
-    &_transaction {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        gap: 16px;
-        padding: 18px 0;
-        border-top: 1px solid #e5e4e7;
-
-        &:first-child {
-            border-top: none;
+    &_form {
+        &_label {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 15px;
+            color: #acacad;
         }
 
-        &_date {
-            margin-top: 4px !important;
-            font-weight: 400;
-        }
-
-        &_names {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            margin-right: auto;
-        }
-
-        &_values {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: center;
-            gap: 2px;
-            white-space: nowrap;
-
-            &_description {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                gap: 4px;
-            }
-        }
-
-        &_value {
-            &__red {
-                color: #E0435F !important;
-            }
-        }
-
-        &_downloadBadge {
-            align-self: center;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 5px;
-            padding: 6px 9px !important;
-            background: #E5E4E7;
-            border-radius: 13px !important;
+        &_input {
+            font-style: normal;
+            font-weight: 500 !important;
+            font-size: 16px !important;
+            line-height: 150% !important;
+            color: #272727 !important;
             border: none !important;
-            cursor: pointer;
-            text-decoration: none;
+            border-bottom: 1px solid #acacad !important;
+            outline: none !important;
+            padding-inline: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            transition: border-bottom-color .5s;
+
+            &.is-invalid {
+                border-bottom-color: #CF2F4C !important;
+            }
+
+            &:focus {
+                border-bottom: 1px solid #E08043 !important;
+            }
+
+            &:disabled {
+                border-bottom: 1px solid #FFF !important;
+                background: none;
+            }
+
+            &::placeholder {
+                font-feature-settings: 'tnum' on, 'lnum' on;
+                color: #ACACAD !important;
+            }
         }
 
+        &_buttons {
+            display: flex;
+            justify-content: end;
+            gap: 18px;
+
+            & > * {
+                flex: 0.5;
+                display: flex !important;
+                justify-content: center;
+                align-items: center;
+                gap: 8px;
+            }
+        }
     }
 }
+
 
 .personalInfo {
     margin-top: 30px;
     width: 395px;
+}
 
-    &_label {
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 15px;
-        color: #acacad;
+.earnings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 26px;
+    padding-top: 30px;
+
+    &_editButton {
+        width: 182px;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 10px !important;
     }
+}
 
-    &_input {
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 150%;
-        color: #272727 !important;
-        border: none !important;
-        border-bottom: 1px solid #acacad !important;
-        outline: none !important;
-        padding-inline: 0 !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        transition: border-bottom-color .5s;
-
-        &:focus {
-            border-bottom: 1px solid #E08043 !important;
-        }
-
-        &:disabled {
-            border-bottom: 1px solid #FFF !important;
-            background: none;
-        }
-    }
-
-    &_buttons {
-        display: flex;
-        justify-content: end;
-        gap: 18px;
-
-        & > * {
-            flex: 0.5;
-            display: flex !important;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-    }
+.changePass {
+    margin-top: 30px;
+    width: 395px;
 }

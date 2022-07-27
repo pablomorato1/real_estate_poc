@@ -1,25 +1,25 @@
 <form class="personalInfo" data-controller="form">
   <div class="mb-3">
-    <label class="personalInfo_label form-label" for="firstName">First Name</label>
-    <input class="personalInfo_input form-control" name="firstName" type="text" id="firstName" value="Ivan" disabled="">
+    <label class="profile_form_label form-label" for="firstName">First Name</label>
+    <input class="profile_form_input form-control" name="firstName" type="text" id="firstName" value="Ivan" disabled="">
     <div class="invalid-feedback"></div>
   </div>
   <div class="mb-3">
-    <label class="personalInfo_label form-label" for="lastName">Last Name</label>
-    <input class="personalInfo_input form-control is-invalid" name="lastName" type="text" id="lastName" value="Shaban">
+    <label class="profile_form_label form-label" for="lastName">Last Name</label>
+    <input class="profile_form_input form-control is-invalid" name="lastName" type="text" id="lastName" value="Shaban">
     <div class="invalid-feedback">This is mandatory field</div>
   </div>
   <div class="mb-3">
-    <label class="personalInfo_label form-label" for="email">Email</label>
-    <input class="personalInfo_input form-control is-invalid" name="email" type="email" id="email" value="test@test.test">
+    <label class="profile_form_label form-label" for="email">Email</label>
+    <input class="profile_form_input form-control is-invalid" name="email" type="email" id="email" value="test@test.test">
     <div class="invalid-feedback">This is mandatory field</div>
   </div>
   <div class="mb-4">
-    <label class="personalInfo_label form-label" for="phone">Phone</label>
-    <input class="personalInfo_input form-control is-invalid" name="phone" type="phone" id="phone" value="+375 02 431 81 47">
+    <label class="profile_form_label form-label" for="phone">Phone</label>
+    <input class="profile_form_input form-control is-invalid" name="phone" type="phone" id="phone" value="+375 02 431 81 47">
     <div class="invalid-feedback">This is mandatory field</div>
   </div>
-  <div class="personalInfo_buttons">
+  <div class="profile_form_buttons">
     <button type="button" class="btn btn-outline-secondary">Edit<%= show_svg('pencil.svg') %></button>
   </div>
 </form>
