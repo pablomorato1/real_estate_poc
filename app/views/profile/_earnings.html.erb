@@ -1,4 +1,55 @@
 <div class="earnings">
   <p class="siText siText__subtitle siText__colorPrimary">Please add payment method.</p>
-  <button type="button" class="earnings_editButton btn btn-outline-secondary">Edit<%= show_svg('pencil.svg') %></button>
+  <button
+    type="button"
+    class="earnings_editButton btn btn-outline-secondary"
+    data-bs-toggle="modal"
+    data-bs-target="#change-payment-method-modal"
+  >
+    Edit<%= show_svg('pencil.svg') %>
+  </button>
+
+  <div class="modal fade" id="change-payment-method-modal" tabindex="-1" aria-labelledby="change-payment-method-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="change-payment-method-label">Change a card</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="modal-body">
+          <div class="mb-3">
+            <input
+              name="cardNumber"
+              placeholder="Card number"
+              type="text"
+              id="cardNumber"
+              class="profile_form_input is-invalid form-control"
+              value=""
+              />
+            <div class="invalid-feedback">This is mandatory field</div>
+          </div>
+          <div class="mb-3">
+            <input
+              name="ownerName"
+              placeholder="Cardholder's name"
+              type="text"
+              id="ownerName"
+              class="profile_form_input form-control"
+              value=""
+              />
+            <div class="invalid-feedback">This is mandatory field</div>
+          </div>
+          <!-- TODO: need action to send request to server-->
+          <button
+            type="button"
+            class="btn btn-secondary w-100 d-flex justify-content-center align-items-center gap-2"
+            data-bs-dismiss="modal"
+          >
+            Save<%= show_svg('check.svg') %>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </div>
