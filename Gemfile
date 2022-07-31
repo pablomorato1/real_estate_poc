@@ -7,6 +7,8 @@ ruby '3.0.0'
 
 gem 'rails', '~> 7.0.0'
 
+gem 'aasm'
+# gem 'rails_admin_aasm'
 gem 'avo'
 gem 'carrierwave', '~> 2.0'
 gem 'devise'

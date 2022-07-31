@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_22_004204) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_27_143706) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +79,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_004204) do
     t.index ["property_id"], name: "index_property_prices_on_property_id"
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.string "originable_type", null: false
+    t.bigint "originable_id", null: false
+    t.bigint "wallet_id", null: false
+    t.float "money_quantity", null: false
+    t.string "transaction_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.index ["originable_type", "originable_id"], name: "index_transactions_on_originable"
+    t.index ["wallet_id"], name: "index_transactions_on_wallet_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -127,5 +140,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_004204) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "investments", "users"
   add_foreign_key "property_prices", "properties"
+  add_foreign_key "transactions", "wallets"
   add_foreign_key "wallets", "users"
 end

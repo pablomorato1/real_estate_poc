@@ -1,4 +1,6 @@
 class Property < ApplicationRecord
+  include Transactionable
+
   has_paper_trail
 
   has_one_attached :image
