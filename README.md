@@ -27,12 +27,31 @@ npm run build:css
 
 ### Create database
 ```
-rake db:create
-rake db:schema:load
+rails db:create
+rails db:schema:load
+
+```
+
+### Seed database with info
+```
+rails db:seed
 ```
 
 ## Start development environment
 
 ```
 rails s
+```
+
+## Add user
+
+Open a new tab on your terminal and type
+
+```ruby
+rails console
+```
+
+there you should create your user like
+```ruby
+User.create(name: 'test', email: 'test@test.test', password: '123456789', role: 1)
 ```

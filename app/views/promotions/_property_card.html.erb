@@ -1,0 +1,44 @@
+<%= link_to property_path(property_card.id, tab: 'overview'), class: "promotions_card" do %>
+  <%= image_tag (property_card.image.present? ? url_for(property_card.image) : "logo.png"), class: "promotions_card_image", width: 140, height: 140, alt: "preview" %>
+  <div class="p-3 flex-fill">
+    <div class="promotions_card_header">
+      <div>
+        <p class="siText mb-2 siText__label siText__colorPrimary"><%= property_card.name %></p>
+        <div class="d-flex mb-3 align-items-center">
+          <span class="siText siText__regular siText__colorPrimary"><%= property_card.address %></span>
+          <span class="siBadge ms-2"><%= (property_card.prop_type == 'passive') ? 'passive' : 'active' %></span>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg"
+        data-equity-url-param="<%= property_card.id %>"
+        data-action="click->equity#sendBuyRequest:prevent"
+      >
+        Send Request
+      </button>
+    </div>
+    <div class="promotions_card_footer">
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Minimum investment</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorSecondary" data-i18n-target="$"><%= property_card.min_investment %></p>
+      </div>
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Equity</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorSecondary" data-i18n-target="percent"><%= property_card.managed_equity %></p>
+      </div>
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Projected yield</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorSecondary" data-i18n-target="percent"><%= property_card.yield_plan %></p>
+      </div>
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Property cost</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorPrimary" data-i18n-target="$"><%= property_card.price %></p>
+      </div>
+      <div>
+        <p class="siText siText__label siText__colorPrimary">Cost per square meter</p>
+        <p class="promotions_card_value siText siText__subtitle siText__colorPrimary" data-i18n-target="$"><%= property_card.square_meter_cost %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

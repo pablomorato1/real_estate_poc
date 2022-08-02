@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   root to: 'dashboard#show'
 
   resources :promotions, only: %i[index]
+  resources :wallet, only: %i[index]
+  resources :portfolio, only: %i[index]
+  resources :profile, only: %i[index]
+  resources :help, only: %i[index]
   resources :properties, only: %i[show]
 end

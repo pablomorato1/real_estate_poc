@@ -1,0 +1,17 @@
+@import "./utils";
+@import "./config/reset";
+
+@import "./components/text";
+@import "./components/delimiter";
+@import "./components/page";
+@import "./components/navbar";
+@import "./components/badge";
+
+@import "./pages/dashboard";
+@import "./pages/promotions";
+@import "./pages/portfolio";
+@import "./pages/property";
+@import "./pages/wallet";
+@import "./pages/profile";
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";

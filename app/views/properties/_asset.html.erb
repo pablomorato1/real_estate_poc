@@ -1,0 +1,58 @@
+<div>
+  <div class="overview_title">
+    <div>
+      <div class="d-flex mb-1 align-items-center">
+        <span class="siText siText__header siText__colorPrimary"><%= @property.name %></span>
+        <span class="siBadge ms-2"><%= (@property.prop_type == 'passive') ? 'passive' : 'active' %></span>
+      </div>
+      <span class="siText siText__label siText__colorPrimary"><%= @property.address %></span>
+    </div>
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg"
+        data-equity-url-param="<%= @property.id %>"
+        data-action="click->equity#sendBuyRequest"
+      >
+        Send request
+      </button>
+  </div>
+  <div class="d-flex flex-row justify-content-between pv-5">
+    <div>
+      <p class="siText siText__label siText__colorPrimary">Minimum investment</p>
+      <p class="overview_value siText siText__title siText__colorSecondary" data-i18n-target="$">16331</p>
+    </div>
+    <div class="delimiter delimiter__vertical"></div>
+    <div>
+      <p class="siText siText__label siText__colorPrimary">Equity</p>
+      <p class="overview_value siText siText__title siText__colorSecondary" data-i18n-target="percent">78.19</p>
+    </div>
+    <div class="delimiter delimiter__vertical"></div>
+    <div>
+      <p class="siText siText__label siText__colorPrimary">Projected yield</p>
+      <p class="overview_value siText siText__title siText__colorSecondary" data-i18n-target="percent">14-21</p>
+    </div>
+    <div class="delimiter delimiter__vertical"></div>
+    <div>
+      <p class="siText siText__label siText__colorPrimary">Property cost</p>
+      <p class="overview_value siText siText__title siText__colorPrimary" data-i18n-target="$">287822</p>
+    </div>
+    <div class="delimiter delimiter__vertical"></div>
+    <div>
+      <p class="siText siText__label siText__colorPrimary">Cost per square meter</p>
+      <p class="overview_value siText siText__title siText__colorPrimary" data-i18n-target="$">6257</p>
+    </div>
+  </div>
+  <div class="overview_row">
+    <div>
+      <p class="siText siText__subtitle siText__colorPrimary mb-4">Portfolio history</p>
+      <div class="w-100 m-0 delimiter delimiter__horizontal"></div>
+      <%= turbo_frame_tag :cost_transactions do %>
+        <%= render partial: 'properties/transaction_cost', collection: @cost_transactions %>
+      <% end %>
+    </div>
+    <div class="assets_chart card">
+      <p class="siText siText__subtitle siText__colorPrimary">Cost history</p>
+      <canvas height="225" width="auto" data-chart-target="chart"></canvas>
+    </div>
+  </div>
+</div>

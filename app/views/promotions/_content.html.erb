@@ -1,0 +1,75 @@
+<%= turbo_stream_from :properties %>
+
+<div class="promotionsContent">
+  <ul class="nav nav-tabs" role="tablist" data-controller="tabs">
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link"
+        type="button"
+        id="properties-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#properties-tab-pane"
+        aria-controls="properties-tab-pane"
+        data-tabs-target="item"
+        aria-selected="<%= params[:tab] == 'properties' %>"
+      >
+        Property
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" id="properties-tab-pane" aria-labelledby="properties-tab" class="fade tab-pane" tabindex="0">
+      <div class="promotionsList">
+        <%= render partial: 'promotions/property_card', collection: @properties %>
+      </div>
+      <%#= turbo_frame_tag :properties, class: "promotionsList" do %>
+      <%#= render partial: 'promotions/property_card', collection: @properties %>
+      <%# end %>
+    </div>
+  </div>
+
+  <div class="dropdown promotionsSortControl" data-controller="dropdown">
+    <button class="no-box-shadow dropdown-toggle btn btn-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="siText siText__regular siText__colorPrimary" data-dropdown-target="title">Sort by minimum investments:</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li>
+        <div
+          class="dropdown-item"
+          role="button"
+          tabindex="0"
+          data-dropdown-target="item"
+          data-action="click->dropdown#selectItem"
+        >
+          high to low
+        </div>
+      </li>
+      <li>
+        <div
+          class="dropdown-item"
+          role="button"
+          tabindex="0"
+          data-dropdown-target="item"
+          data-action="click->dropdown#selectItem"
+        >
+          low to high
+        </div>
+      </li>
+      <li>
+        <div
+          class="dropdown-item"
+          role="button"
+          tabindex="0"
+          data-dropdown-target="item"
+          data-default
+          data-action="click->dropdown#selectItem"
+        >
+          none
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+

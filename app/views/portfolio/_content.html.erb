@@ -1,0 +1,94 @@
+<%= turbo_stream_from :active_assets %>
+<%= turbo_stream_from :archived_assets %>
+<%= turbo_stream_from :properties %>
+
+<div class="portfolioContent">
+  <ul class="nav nav-tabs" id="portfolioTabs" role="tablist" data-controller="tabs">
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link"
+        type="button"
+        id="active-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#active-tab-pane"
+        aria-controls="active-tab-pane"
+        data-tabs-target="item"
+        aria-selected="<%= params[:tab] == 'active' %>"
+      >
+        Active
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link"
+        type="button"
+        id="archive-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#archive-tab-pane"
+        aria-controls="archive-tab-pane"
+        data-tabs-target="item"
+        aria-selected="<%= params[:tab] == 'archive' %>"
+      >
+        Archive
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel" id="active-tab-pane" aria-labelledby="active-tab" class="fade tab-pane" tabindex="0">
+      <div class="portfolioList">
+        <%= render partial: 'portfolio/asset_card', collection: @active_assets, properties: @properties %>
+      </div>
+    </div>
+    <div role="tabpanel" id="archive-tab-pane" aria-labelledby="archive-tab" class="fade tab-pane" tabindex="0">
+      <div class="portfolioList">
+        <%= render partial: 'portfolio/archive_card', collection: @archived_assets, properties: @properties %>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown portfolioSortControl" data-controller="dropdown">
+    <button class="no-box-shadow dropdown-toggle btn btn-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="siText siText__regular siText__colorPrimary" data-dropdown-target="title">Sort by equity:</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li>
+        <div
+          class="dropdown-item"
+          role="button"
+          tabindex="0"
+          data-dropdown-target="item"
+          data-action="click->dropdown#selectItem"
+        >
+          high to low
+        </div>
+      </li>
+      <li>
+        <div
+          class="dropdown-item"
+          role="button"
+          tabindex="0"
+          data-dropdown-target="item"
+          data-action="click->dropdown#selectItem"
+        >
+          low to high
+        </div>
+      </li>
+      <li>
+        <div
+          class="dropdown-item"
+          role="button"
+          tabindex="0"
+          data-dropdown-target="item"
+          data-default
+          data-action="click->dropdown#selectItem"
+        >
+          none
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>

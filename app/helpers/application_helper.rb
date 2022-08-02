@@ -18,7 +18,17 @@ module ApplicationHelper
     html.html_safe
   end
 
-  def render_page_title(controller)
-    "#{t("controller_name.#{controller}")}"
+  def render_header
+    "#{controller_name}/header"
+  end
+
+  def render_content
+    "#{controller_name}/content"
+  end
+
+  def show_svg(path)
+    File.open("app/assets/images/#{path}", "rb") do |file|
+      raw file.read
+    end
   end
 end

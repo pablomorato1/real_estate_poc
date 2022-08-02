@@ -1,0 +1,59 @@
+<div class="archive_container">
+  <div class="archive_row">
+    <div class="archive_header_details">
+      <div>
+        <div class="d-flex mb-1 align-items-center">
+          <span class="siText siText__header siText__colorPrimary"><%= @property.name %></span>
+          <span class="siBadge ms-2"><%= (@property.prop_type == 'passive') ? 'passive' : 'active' %></span>
+          <p class="siText ms-2 siText__regular siText__colorPrimary siText__w400" data-i18n-target="date"><%= @property.created_at %></p>
+        </div>
+        <span class="siText siText__label siText__colorPrimary"><%= @property.address %></span>
+      </div>
+      <div class="w-100 mt-5 mb-0 delimiter delimiter__horizontal"></div>
+      <div class="mt-4 mb-4 d-flex flex-row gap-5">
+        <div>
+          <p class="siText siText__label siText__colorPrimary">Total income</p>
+          <p class="siText mt-2 siText__title siText__colorSuccess" data-i18n-target="$">0</p>
+        </div>
+        <div>
+          <p class="siText siText__label siText__colorPrimary">Investment time</p>
+          <p class="siText mt-2 siText__subtitle siText__colorPrimary">
+            <span data-i18n-target="date"><%= @property.created_at %></span> - Present</p>
+        </div>
+      </div>
+      <div class="w-100 m-0 delimiter delimiter__horizontal"></div>
+      <div class="w-100 mt-4 mb-4 d-flex flex-row justify-content-between">
+        <div><p class="siText siText__label siText__colorPrimary">My equity</p>
+          <p class="siText mt-2 siText__title siText__colorPrimary" data-i18n-target="percent">21.81</p>
+        </div>
+        <div><p class="siText siText__label siText__colorPrimary">Total cost</p>
+          <p class="siText mt-2 siText__title siText__colorPrimary" data-i18n-target="$"><%= @property.price %></p>
+        </div>
+        <div><p class="siText siText__label siText__colorPrimary">Equity cost</p>
+          <p class="siText mt-2 siText__title siText__colorPrimary" data-i18n-target="$">62779</p>
+        </div>
+      </div>
+      <div class="w-100 m-0 delimiter delimiter__horizontal"></div>
+    </div>
+    <div class="archive_chart card">
+      <p class="siText siText__subtitle siText__colorPrimary">Cost history</p>
+      <canvas height="225" width="auto" data-chart-target="chart"></canvas>
+    </div>
+  </div>
+  <div class="archive_row">
+    <div>
+      <p class="siText siText__subtitle siText__colorPrimary mb-4">Cost</p>
+      <div class="w-100 m-0 delimiter delimiter__horizontal"></div>
+      <%= turbo_frame_tag :cost_transactions do %>
+        <%= render partial: 'properties/transaction_cost', collection: @cost_transactions %>
+      <% end %>
+    </div>
+    <div>
+      <p class="siText siText__subtitle siText__colorPrimary mb-4">Profit</p>
+      <div class="w-100 m-0 delimiter delimiter__horizontal"></div>
+      <%= turbo_frame_tag :profit_transactions do %>
+        <%= render partial: 'properties/transaction_profit', collection: @profit_transactions %>
+      <% end %>
+    </div>
+  </div>
+</div>

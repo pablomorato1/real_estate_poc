@@ -1,0 +1,144 @@
+.dashboard {
+    &Header {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 32px;
+        justify-content: space-between;
+    }
+
+    &Content {
+        flex: 1;
+        margin: 33px 16px 33px 33px;
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        overflow-y: hidden;
+
+        &_transaction {
+            flex: 1 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        &_promotions {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+    }
+
+}
+
+.transitions {
+    &_list {
+        padding-right: 20px;
+        margin-top: 20px;
+        border-top: 1px solid #E5E4E7;
+        border-bottom: 1px solid #E5E4E7;
+        overflow-y: auto;
+    }
+
+    &_entity {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        padding: 18px 0;
+        border-top: 1px solid #e5e4e7;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    &_date {
+        margin-top: 4px !important;
+        font-weight: 400;
+    }
+
+    &_names {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        margin-right: auto;
+    }
+
+    &_values {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 2px;
+        white-space: nowrap;
+
+        &_description {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            gap: 4px;
+        }
+    }
+
+    &_downloadBadge {
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        padding: 6px 9px !important;
+        background: #e5e4e7;
+        border-radius: 13px !important;
+        border: none !important;
+        cursor: pointer;
+        text-decoration: none;
+    }
+}
+
+.promotions {
+    &_list {
+        padding-right: 20px;
+        margin-top: 20px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 415px;
+        min-width: 415px;
+    }
+
+    &_entity {
+        position: relative;
+        width: 378px;
+        background: #272727;
+        border: 1px solid #272727;
+        border-radius: 4px;
+        user-select: none;
+    }
+
+    &_image {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    &_texts {
+        position: absolute;
+        bottom: 21px;
+        left: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &_link {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+
+        &:hover {
+            color: #E08043;
+        }
+    }
+}

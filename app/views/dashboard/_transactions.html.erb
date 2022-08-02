@@ -1,0 +1,18 @@
+<div class="transitions_entity">
+  <p class="transitions_date siText siText__label siText__colorMidGrey"><%= transactions[:createdAt].to_date.strftime("%d.%m.%Y") %></p>
+  <div class="transitions_names">
+    <p class="siText siText__regular siText__colorPrimary"><%= transactions[:name] %></p>
+    <p class="siText siText__label siText__colorGrey"><%= transactions[:description] %></p>
+  </div>
+  <div class="transitions_values">
+    <p class="siText siText__regularBold siText__colorSuccess" data-i18n-target="$"><%= transactions[:value] %></p>
+    <div class="transitions_values_description">
+      <p class="siText siText__label siText__colorPrimary" data-i18n-target="percent"><%= transactions[:annual] %></p>
+      <p class="siText siText__label siText__colorGrey">annual</p>
+    </div>
+  </div>
+  <a class="transitions_downloadBadge" href="<%= transactions[:report] %>" download="Report">
+    <span class="siText siText__label siText__colorPrimary">Report</span>
+    <%= show_svg('icon-download.svg') %>
+  </a>
+</div>

@@ -1,0 +1,23 @@
+<%= turbo_stream_from :wallet %>
+
+<div class="dashboardHeader">
+  <div>
+    <p class="siText siText__label siText__colorMidGrey">Investment amount</p>
+    <p class="mt-1 siText siText__header siText__colorPrimary" data-i18n-target="$"><%= @wallet[:invested_value] %></p>
+  </div>
+  <div class="delimiter delimiter__vertical"></div>
+  <div>
+    <p class="siText siText__label siText__colorMidGrey">Wallet</p>
+    <p class="mt-1 siText siText__header siText__colorPrimary" data-i18n-target="$"><%= @wallet[:free_value] %></p>
+  </div>
+  <div class="delimiter delimiter__vertical"></div>
+  <div>
+    <p class="siText siText__label siText__colorMidGrey">Assessed value</p>
+    <p class="mt-1 siText siText__header siText__colorPrimary" data-i18n-target="$"><%= @wallet[:assessed_value] %></p>
+  </div>
+  <div class="delimiter delimiter__vertical"></div>
+  <div>
+    <p class="siText siText__label siText__colorMidGrey">Passive income</p>
+    <p class="mt-1 siText siText__header siText__colorPrimary" data-i18n-target="$"><%= @wallet[:income] %></p>
+  </div>
+</div>

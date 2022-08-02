@@ -1,0 +1,60 @@
+<div class="propertyPage_content">
+  <ul class="nav nav-tabs" id="propertyTabs" role="tablist" data-controller="tabs">
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link propertyPage_tab"
+        id="overview-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#overview-tab-pane"
+        aria-controls="overview-tab-pane"
+        tabindex="-1"
+        aria-selected="<%= params[:tab] == 'overview' %>"
+        data-tabs-target="item"
+      >
+        Property
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link propertyPage_tab"
+        id="asset-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#asset-tab-pane"
+        aria-controls="asset-tab-pane"
+        tabindex="-1"
+        aria-selected="<%= params[:tab] == 'asset' %>"
+        data-tabs-target="item"
+      >
+        Portfolio
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="siTab nav-link propertyPage_tab"
+        id="archive-tab"
+        role="tab"
+        data-bs-toggle="tab"
+        data-bs-target="#archive-tab-pane"
+        aria-controls="archive-tab-pane"
+        tabindex="-1"
+        aria-selected="<%= params[:tab] == 'archive' %>"
+        data-tabs-target="item"
+      >
+        Archive
+      </button>
+    </li>
+  </ul>
+  <div class="tab-content" data-controller="chart">
+    <div role="tabpanel" id="overview-tab-pane" aria-labelledby="overview-tab" class="fade tab-pane">
+      <%= render partial: 'properties/overview' %>
+    </div>
+    <div role="tabpanel" id="asset-tab-pane" aria-labelledby="asset-tab" class="fade tab-pane">
+      <%= render partial: 'properties/asset' %>
+    </div>
+    <div role="tabpanel" id="archive-tab-pane" aria-labelledby="archive-tab" class="fade tab-pane">
+      <%= render partial: 'properties/archive' %>
+    </div>
+  </div>
+</div>

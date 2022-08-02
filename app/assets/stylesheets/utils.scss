@@ -1,0 +1,15 @@
+.only-hover {
+    display: none;
+
+    //*:hover > & {
+    //    display: inline;
+    //}
+}
+
+.non-hover {
+    display: inline;
+    //
+    //*:hover > & {
+    //    display: none;
+    //}
+}

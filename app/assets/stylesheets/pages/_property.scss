@@ -1,0 +1,225 @@
+.propertyPage {
+    &_headerImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 240px;
+    }
+
+    &_backButton {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &_historyButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        min-width: 185px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    &_content {
+        flex: 1 1;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin: 70px 0 32px 32px;
+        z-index: 1;
+
+        & > .tab-content {
+            overflow-y: auto;
+            padding: 0 32px 32px 0;
+        }
+    }
+
+    &_tab {
+        color: #FFFFFF !important;
+    }
+}
+
+.assets {
+    &_container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        &_values {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &_value {
+            display: flex;
+            align-items: center;
+            margin-top: 6px;
+        }
+    }
+
+    &_row {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+
+        & > * {
+            flex: 1;
+        }
+
+        &_details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        &_chart {
+        }
+    }
+
+    &_buttons {
+        margin-top: 4px;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        gap: 18px;
+    }
+
+    &_chart {
+        border-radius: 10px;
+        padding: 16px 16px 45px;
+        height: 317px;
+    }
+
+    &_transactions {
+        &_cost {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: #E5E4E7 1px solid;
+        }
+
+        &_profit {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: #E5E4E7 1px solid;
+        }
+    }
+}
+
+.archive {
+    &_container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        &_values {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &_value {
+            display: flex;
+            align-items: center;
+            margin-top: 6px;
+        }
+    }
+
+    &_row {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+
+        & > * {
+            flex: 1;
+        }
+
+        &_details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        &_chart {
+        }
+    }
+
+    &_buttons {
+        margin-top: 4px;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        gap: 18px;
+    }
+
+    &_chart {
+        border-radius: 10px;
+        padding: 16px 16px 45px;
+        height: 317px;
+    }
+
+    &_transactions {
+        &_cost {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: #E5E4E7 1px solid;
+        }
+
+        &_profit {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: #E5E4E7 1px solid;
+        }
+    }
+}
+
+.overview {
+    &_title {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    &_value {
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+    }
+
+    &_row {
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+
+        & > * {
+            flex: 1;
+        }
+    }
+}

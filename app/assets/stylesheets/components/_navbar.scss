@@ -1,0 +1,76 @@
+.siNavbar {
+    display: flex;
+    flex-direction: column;
+    width: 196px;
+    border-right: #ECECED 1px solid;
+
+    &_menu {
+        flex: 1;
+        padding-left: 16px;
+        padding-top: 41px;
+        padding-bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &_link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 12px;
+        text-decoration: none;
+        transition: color 0.5s;
+
+        &__selected, &:hover {
+            color: #E08043 !important;
+        }
+
+        &__selected {
+            pointer-events: none;
+        }
+
+        &:last-child {
+            margin-top: auto;
+        }
+
+        & > .icon-regular {
+            transition: opacity 0.5s;
+        }
+
+        &:hover > .icon-regular, &__selected > .icon-regular {
+            opacity: 0;
+        }
+
+        & > .icon-hover {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s;
+
+            &[alt=exit] {
+                right: 1px;
+            }
+        }
+
+        &:hover > .icon-hover, &__selected > .icon-hover {
+            opacity: 1;
+        }
+    }
+
+    &_footer {
+        padding: 24px 80px 24px 58px;
+        border-top: #E5E4E7 1px solid;
+
+        & > .siNavbar_link {
+            gap: 0;
+        }
+
+        &_item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+}
