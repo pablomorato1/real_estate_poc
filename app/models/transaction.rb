@@ -36,13 +36,17 @@ class Transaction < ApplicationRecord
     case self.transaction_type
     when "deposit"
       final_amount = self.wallet.money + self.money_quantity
-      self.wallet.update(money: final_amount)
+        update_wallet_money(final_amount)
     when "withdraw"
       final_amount = self.wallet.money - self.money_quantity
       return false if final_amount < 0
-      self.wallet.update(money: final_amount)
+        update_wallet_money(final_amount)
     else
       false
     end
+  end
+
+  def update_wallet_money(value)
+    self.wallet.update(money: value)
   end
 end
