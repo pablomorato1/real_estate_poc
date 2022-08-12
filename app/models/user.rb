@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   has_many :investments, inverse_of: :user
   has_one :wallet
+  has_many :transactions, through: :wallet
 
   validates :name, :email, :password, presence: :true
 

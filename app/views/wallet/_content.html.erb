@@ -2,7 +2,7 @@
   <div class="wallet_stats">
     <div>
       <p class="siText siText__label siText__colorPrimary">Wallet</p>
-      <p class="siText wallet_stats_item wallet_stats_item__huge siText__regular siText__colorPrimary" data-i18n-target="$">782104</p>
+      <p class="siText wallet_stats_item wallet_stats_item__huge siText__regular siText__colorPrimary" data-i18n-target="$"><%= current_user.wallet.money  %></p>
     </div>
     <div>
       <p class="siText siText__label siText__colorPrimary">Passive income</p>
@@ -10,7 +10,7 @@
     </div>
     <div>
       <p class="siText siText__label siText__colorPrimary">Investments</p>
-      <p class="siText wallet_stats_item siText__header siText__colorPrimary" data-i18n-target="$">220368</p>
+      <p class="siText wallet_stats_item siText__header siText__colorPrimary" data-i18n-target="$"><%= current_user.investments.sum(:value) %></p>
     </div>
   </div>
   <div class="wallet_delimiter delimiter delimiter__horizontal"></div>

@@ -2,6 +2,10 @@
 
 RailsAdmin.config do |config|
   config.model 'Property' do
+    object_label_method do
+      :to_s
+    end
+
     list do
       field :id
       field :name
