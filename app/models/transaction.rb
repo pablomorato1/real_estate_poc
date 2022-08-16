@@ -1,11 +1,12 @@
 class Transaction < ApplicationRecord
+  has_paper_trail limit: nil
   include AASM
 
-  belongs_to :originable, polymorphic: true
+  belongs_to :originable, polymorphic: true, optional: true
   belongs_to :wallet
   has_one :user, through: :wallet
 
-  validates :title, :description, :money_quantity, :transaction_type, presence: true
+  validates :title, :money_quantity, :transaction_type, presence: true
 
   enum transaction_type: { deposit: 'Deposit', withdraw: 'Withdraw', passive_income: 'Passive Income', equity_purchase: 'Equity Purchase', equity_sale: 'Equity Sale'}
 
@@ -33,8 +34,8 @@ class Transaction < ApplicationRecord
       transitions from: :on_hold, to: :failed
     end
 
-    event :fail_process do
-      transitions from: :on_hold, to: :failed
+    event :revert_fail do
+      transitions from: :failed, to: :on_hold
     end
   end
 

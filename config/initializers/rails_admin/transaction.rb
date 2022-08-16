@@ -5,6 +5,7 @@ RailsAdmin.config do |config|
 
     list do
       field :id
+      field :wallet
       field :title
       field :description
       field :status
@@ -18,8 +19,8 @@ RailsAdmin.config do |config|
     edit do
       field :title
       field :description
-      field :originable
       field :wallet
+      field :originable
       field :annual_percentage
       field :money_quantity
       field :report_url
