@@ -1,3 +1,8 @@
+require Rails.root.join('lib', 'rails_admin', 'process_transaction.rb')
+require Rails.root.join('lib', 'rails_admin', 'revert_transaction.rb')
+RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::ProcessTransaction)
+RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::RevertTransaction)
+
 RailsAdmin.config do |config|
   config.asset_source = :sprockets
 
@@ -24,6 +29,8 @@ RailsAdmin.config do |config|
   # config.show_gravatar = true
 
   config.actions do
+    process_transaction
+    revert_transaction
     dashboard                     # mandatory
     index                         # mandatory
     new
@@ -39,5 +46,5 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  # config.excluded_models= [PropertyPrice]
+  config.excluded_models= [Wallet]
 end

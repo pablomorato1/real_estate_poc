@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_21_151133) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_27_123952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +79,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_151133) do
     t.index ["property_id"], name: "index_property_prices_on_property_id"
   end
 
+  create_table "transactions", force: :cascade do |t|
+    t.string "originable_type"
+    t.bigint "originable_id"
+    t.bigint "wallet_id", null: false
+    t.float "money_quantity", null: false
+    t.string "transaction_type", null: false
+    t.string "status"
+    t.string "title", null: false
+    t.string "description"
+    t.float "annual_percentage"
+    t.string "report_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["originable_type", "originable_id"], name: "index_transactions_on_originable"
+    t.index ["wallet_id"], name: "index_transactions_on_wallet_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
@@ -114,8 +131,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_21_151133) do
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  create_table "wallets", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.float "money", default: 0.0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["money"], name: "index_wallets_on_money"
+    t.index ["user_id"], name: "index_wallets_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "investments", "users"
   add_foreign_key "property_prices", "properties"
+  add_foreign_key "transactions", "wallets"
+  add_foreign_key "wallets", "users"
 end

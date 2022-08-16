@@ -1,4 +1,6 @@
 class Property < ApplicationRecord
+  include Transactionable
+
   has_paper_trail
 
   has_one_attached :image
@@ -10,6 +12,10 @@ class Property < ApplicationRecord
   scope :only_displayed_on_dashboard, -> { where(show_on_dashboard: true) }
 
   after_save :track_price
+
+  def to_s
+    "#{name} - #{address}"
+  end
 
   def square_meter_cost
     return 0 if area.zero?

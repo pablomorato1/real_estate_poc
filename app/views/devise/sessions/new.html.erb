@@ -9,18 +9,18 @@
   </div>
 
   <div class="form-group mbn">
-    <%= f.password_field :password, placeholder: 'Senha', autocomplete: "off", class: 'form-control' %>
+    <%= f.password_field :password, placeholder: 'Password', autocomplete: "off", class: 'form-control' %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
     <div class="form-group mbn">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, 'Manter Conectado', class: "text-primary pls" %>
+      <%= f.label :remember_me, 'Remember me?', class: "text-primary pls" %>
     </div>
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Entrar", class: 'btn btn-block btn-spaced btn-lg btn-secondary' %>
+    <%= f.submit "Sign In", class: 'btn btn-block btn-spaced btn-lg btn-secondary' %>
   </div>
   <%= render "devise/shared/links" %>
 <% end %>
