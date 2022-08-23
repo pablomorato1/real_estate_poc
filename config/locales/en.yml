@@ -30,6 +30,10 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      transaction/transaction_types:
+          passive_income: 'Passive Income'
   admin:
     actions:
       process_transaction:

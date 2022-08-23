@@ -4,7 +4,7 @@
       <div>
         <div class="d-flex mb-1 align-items-center">
           <span class="siText siText__header siText__colorPrimary"><%= @property.name %></span>
-          <span class="siBadge ms-2"><%= (@property.prop_type == 'passive') ? 'passive' : 'active' %></span>
+          <span class="siBadge ms-2"><%= @property.prop_type %></span>
           <p class="siText ms-2 siText__regular siText__colorPrimary siText__w400" data-i18n-target="date"><%= @property.created_at %></p>
         </div>
         <span class="siText siText__label siText__colorPrimary"><%= @property.address %></span>
