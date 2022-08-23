@@ -20,11 +20,13 @@ RailsAdmin.config do |config|
       field :title
       field :description
       field :wallet
-      field :originable
+      field :originable do
+        label 'Origin Object'
+      end
       field :annual_percentage
       field :money_quantity
       field :report_url
-      field :transaction_type, :active_record_enum
+      field :transaction_type, :enum
     end
   end
 end

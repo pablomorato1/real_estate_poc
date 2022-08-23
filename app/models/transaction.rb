@@ -8,7 +8,8 @@ class Transaction < ApplicationRecord
 
   validates :title, :money_quantity, :transaction_type, presence: true
 
-  enum transaction_type: { deposit: 'Deposit', withdraw: 'Withdraw', passive_income: 'Passive Income', equity_purchase: 'Equity Purchase', equity_sale: 'Equity Sale'}
+  enum transaction_type: { deposit: 'Deposit', withdraw: 'Withdraw', passive_income: 'Passive Income',
+                           equity_purchase: 'Equity Purchase', equity_sale: 'Equity Sale' }
 
   aasm column: :status do
     state :on_hold, initial: true
@@ -42,27 +43,26 @@ class Transaction < ApplicationRecord
   private
 
   def process_transaction
-    case self.transaction_type
-    when "deposit"
-      final_amount = self.wallet.money + self.money_quantity
+    case transaction_type
+    when 'deposit'
+      final_amount = wallet.money + money_quantity
       update_wallet_money(final_amount)
-    when "withdraw"
-      final_amount = self.wallet.money - self.money_quantity
-      return false if final_amount < 0
-      update_wallet_money(final_amount)
+    when 'withdraw'
+      subtract_money
+    when 'equity_purchase'
+      subtract_money
+      create_investment
     else
       false
     end
   end
 
   def revert_transaction
-    case self.transaction_type
-    when "deposit"
-      final_amount = self.wallet.money - self.money_quantity
-      return false if final_amount < 0
-      update_wallet_money(final_amount)
-    when "withdraw"
-      final_amount = self.wallet.money + self.money_quantity
+    case transaction_type
+    when 'deposit'
+      subtract_money
+    when 'withdraw'
+      final_amount = wallet.money + money_quantity
       update_wallet_money(final_amount)
     else
       false
@@ -70,6 +70,17 @@ class Transaction < ApplicationRecord
   end
 
   def update_wallet_money(value)
-    self.wallet.update(money: value)
+    wallet.update(money: value)
+  end
+
+  def subtract_money
+    final_amount = wallet.money - money_quantity
+    return false if final_amount.negative?
+
+    update_wallet_money(final_amount)
+  end
+
+  def create_investment
+    user.investments.create(productable: originable, value: money_quantity, product_equity: ((originable.min_investment/originable.price*100).round(2)))
   end
 end

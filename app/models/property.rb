@@ -1,5 +1,6 @@
 class Property < ApplicationRecord
   include Transactionable
+  include Productable
 
   has_paper_trail
 
