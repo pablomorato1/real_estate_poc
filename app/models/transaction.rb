@@ -41,7 +41,7 @@ class Transaction < ApplicationRecord
   end
 
   private
-
+  # This should be migrated to a service
   def process_transaction
     case transaction_type
     when 'deposit'
