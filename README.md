@@ -43,6 +43,11 @@ rails db:seed
 rails s
 ```
 
+### After all deployments there should exist an automated execution of the following commands to grant that the database will be migrated correctly
+```
+rails db:migrate
+```
+
 ## Add user
 
 Open a new tab on your terminal and type
