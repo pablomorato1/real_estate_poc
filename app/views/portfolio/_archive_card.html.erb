@@ -10,7 +10,7 @@
         </div>
       </div>
       <!-- On the "2.days.from_now" there should be the "sold at" field from the investment object on database -->
-      <p><%= archive_card.created_at.strftime("%d.%m.%Y") %>-<%= 2.days.from_now.to_date.strftime("%d.%m.%Y") %></p>
+      <p><%= archive_card.created_at.strftime("%d.%m.%Y") %>-<%= archive_card.investments.where.not(sold_at: nil).take.sold_at.strftime("%d.%m.%Y") %></p>
     </div>
     <div class="portfolio_card_footer">
       <div>

@@ -2,9 +2,10 @@ module RailsAdmin
   module Config
     module Actions
       class RevertTransaction < RailsAdmin::Config::Actions::Base
-        # This ensures the action only shows up for Users
+        # This ensures the action only shows up on transactions
+        # Currently disabled
         register_instance_option :visible? do
-          authorized? && bindings[:object].class == Transaction && bindings[:object].processed?
+          authorized? && bindings[:object].class == Transaction && bindings[:object].processed? && false
         end
         # We want the action on members, not the Users collection
         register_instance_option :member do
