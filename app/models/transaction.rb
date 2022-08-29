@@ -52,6 +52,11 @@ class Transaction < ApplicationRecord
     when 'equity_purchase'
       subtract_money
       create_investment
+    when 'equity_sale'
+      return false unless originable.instance_of?(Investment)
+      final_amount = wallet.money + money_quantity
+      update_wallet_money(final_amount)
+      originable.update(sold_at: Time.now)
     else
       false
     end
