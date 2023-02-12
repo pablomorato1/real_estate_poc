@@ -12,7 +12,7 @@ gem 'aasm'
 gem 'avo'
 gem 'carrierwave', '~> 2.0'
 gem 'devise'
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'paper_trail', '~> 12.3'
@@ -21,9 +21,10 @@ gem 'puma', '~> 5.0'
 gem 'pundit', '~> 2.2'
 gem 'rails_admin', '~> 3.0'
 gem 'rails_admin_history_rollback'
-gem 'rails_admin_pundit', :github => 'sudosu/rails_admin_pundit'
+gem 'rails_admin_pundit', github: 'sudosu/rails_admin_pundit'
 gem 'redis', '~> 4.0'
 gem 'sassc-rails'
+gem 'simple_form'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails', '~> 1.0.0'
@@ -49,9 +50,9 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
-  gem 'dotenv-rails'
 end
 
 group :development do
